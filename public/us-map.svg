@@ -1,0 +1,26 @@
+<svg viewBox="0 0 1000 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.6">
+    <!-- Manual approximation of US Map low-poly -->
+    <path d="M 975 80 
+             L 930 130 
+             L 880 120 
+             L 850 160 
+             L 900 350  <!-- Florida Tip -->
+             L 820 320 
+             L 750 320 
+             L 600 500  <!-- Texas Tip -->
+             L 500 450 
+             L 450 480 
+             L 150 480 
+             L 80 500   <!-- SoCal -->
+             L 30 400 
+             L 30 100   <!-- WA -->
+             L 150 100 
+             L 250 120 
+             L 600 120  <!-- Great Lakes Start -->
+             L 650 180 
+             L 750 120 
+             L 900 80 
+             L 975 80 Z" />
+  </g>
+</svg>

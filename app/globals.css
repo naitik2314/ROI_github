@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: #0B0F1A;
+    --foreground: #F7F8FA;
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    .glass-card {
+        @apply backdrop-blur-xl bg-ink/40 border border-white/10 shadow-2xl;
+    }
+
+    .glass-input {
+        @apply backdrop-blur-md bg-white/5 border border-white/10 focus:border-accent-start/50 transition-all duration-300;
+    }
+
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-start to-accent-end;
+    }
+}
+
+body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: var(--font-inter), sans-serif;
+    overflow-x: hidden;
+}
