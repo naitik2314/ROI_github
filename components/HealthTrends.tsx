@@ -4,6 +4,7 @@ import { Maximize2, Minimize2, X } from 'lucide-react';
 import CommuterTable from './CommuterTable';
 import SocialMediaFeed from './SocialMediaFeed';
 import GoogleTrends from './GoogleTrends';
+import RoiPanel from './RoiPanel';
 
 // Neon colors - distinct from the map's blue/white
 const COLORS = {
@@ -26,6 +27,7 @@ export default function HealthTrends({ isVisible, data }: HealthTrendsProps) {
     ];
     const socialPosts = data?.socialPosts || [];
     const trends = data?.trendingTopics || [];
+    const roi = data?.roiAnalysis;
 
     // Animation variants
     const panelVariants: Variants = {
@@ -83,6 +85,13 @@ export default function HealthTrends({ isVisible, data }: HealthTrendsProps) {
                                     {isExpanded ? <Minimize2 size={20} /> : <Maximize2 size={20} />}
                                 </button>
                             </div>
+
+                            {/* ROI Analysis Section */}
+                            {roi && (
+                                <div className={`${isExpanded ? 'col-span-1 md:col-span-2 mb-2' : 'mb-6'}`}>
+                                    <RoiPanel data={roi} variant={isExpanded ? 'full' : 'compact'} />
+                                </div>
+                            )}
 
                             {/* Charts Section */}
                             <div className="space-y-6">

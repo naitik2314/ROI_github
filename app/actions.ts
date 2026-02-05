@@ -38,6 +38,17 @@ export interface CompanyData {
         volume: string;
         growth: string;
     }[];
+    roiAnalysis: {
+        estimatedAnnualCost: string; // e.g., "$14,200,000"
+        costPerEmployee: string; // e.g., "$1,420"
+        potentialSavings: string; // e.g., "$3,976,000"
+        roi: string; // e.g., "3.31x"
+        diseaseBreakdown: {
+            name: string; // e.g., "Depression", "Hypertension"
+            cost: number; // Raw number for charting
+            formattedCost: string; // e.g. "$3.5M"
+        }[];
+    };
 }
 
 export async function getCompanyData(query: string): Promise<CompanyData | null> {
@@ -56,7 +67,17 @@ export async function getCompanyData(query: string): Promise<CompanyData | null>
             summary: 'API Key missing. Please check your .env file.',
             commuters: [],
             socialPosts: [],
-            trendingTopics: []
+            trendingTopics: [],
+            roiAnalysis: {
+                estimatedAnnualCost: "$14.2M",
+                costPerEmployee: "$1,420",
+                potentialSavings: "$3.9M",
+                roi: "3.31x",
+                diseaseBreakdown: [
+                    { name: "Depression", cost: 3500000, formattedCost: "$3.5M" },
+                    { name: "Hypertension", cost: 2900000, formattedCost: "$2.9M" }
+                ]
+            }
         };
     }
 
@@ -69,9 +90,15 @@ export async function getCompanyData(query: string): Promise<CompanyData | null>
       2. Headquarters Location (City, County, State, Coordinates).
       3. Approximate number of US employees.
       4. A brief 1-sentence summary.
-      5. Commuter Data: Estimate the top 3 neighboring counties people commute FROM to this HQ. Give approximate counts and percentages.
+      5. Commuter Data: Estimate the top 3 neighboring counties people commute FROM to this HQ. Give approximate counts and percentages. Add "riskLevel" (High/Medium/Low) and "topHealthConcern" (e.g. Hypertension) for each.
       6. Social Media Simulation: Generate 3-4 realistic "social media posts" that might be trending in that county regarding health/environment (Air Quality, Happiness, Water Quality, Traffic Stress). Mix sentiments.
       7. Google Trends: Identify top 3 rising health-related search terms in this region (e.g. "Flu symptoms", "Gym near me", "Air purifier").
+      8. ROI Analysis (Mobile Health Unit Context):
+         - Estimate "Estimated Annual Cost" of health-related absenteeism/productivity loss for this specific company size.
+         - Estimate "Cost Per Employee" average.
+         - Estimate "Potential Savings" if a Mobile Health Unit was deployed (preventative screenings etc).
+         - Calculate "ROI" multiplier (e.g. 3.0x).
+         - Provide a "Disease Impact Breakdown". Identify the top 5 most relevant health conditions for this specific location/county and industry (e.g. tech might have higher "Burnout" or "Eye Strain", manufacturing might have "Musculoskeletal"). Estimate realistic annual costs. ACVOID RETURNING ZERO. Estimate based on national averages if local data is sparse.
 
       Return ONLY valid JSON in this format:
       {
@@ -85,8 +112,8 @@ export async function getCompanyData(query: string): Promise<CompanyData | null>
         "stats": { "employeeCount": "100,000", "industry": "Tech" },
         "summary": "Summary.",
         "commuters": [
-            { "county": "Neighbor County A", "count": 5000, "percent": 15 },
-            { "county": "Neighbor County B", "count": 3000, "percent": 10 }
+            { "county": "Neighbor County A", "count": 5000, "percent": 15, "riskLevel": "High", "topHealthConcern": "Hypertension" },
+            { "county": "Neighbor County B", "count": 3000, "percent": 10, "riskLevel": "Medium", "topHealthConcern": "Diabetes" }
         ],
         "socialPosts": [
             { "id": 1, "user": "@user123", "content": "Air quality is terrible today in [County]...", "sentiment": "negative", "topic": "air" },
@@ -95,7 +122,20 @@ export async function getCompanyData(query: string): Promise<CompanyData | null>
         "trendingTopics": [
             { "term": "Flu symptoms", "volume": "High", "growth": "+150%" },
             { "term": "Yoga classes", "volume": "Medium", "growth": "+40%" }
-        ]
+        ],
+        "roiAnalysis": {
+            "estimatedAnnualCost": "$14,200,000",
+            "costPerEmployee": "$1,420",
+            "potentialSavings": "$3,976,000",
+            "roi": "3.31x",
+            "diseaseBreakdown": [
+                { "name": "Depression", "cost": 3600000, "formattedCost": "$3.6M" },
+                { "name": "Hypertension", "cost": 2900000, "formattedCost": "$2.9M" },
+                { "name": "Diabetes", "cost": 2700000, "formattedCost": "$2.7M" },
+                { "name": "Opioid Use", "cost": 2100000, "formattedCost": "$2.1M" },
+                { "name": "Other", "cost": 2700000, "formattedCost": "$2.7M" }
+            ]
+        }
       }
 
       Company: ${query}
