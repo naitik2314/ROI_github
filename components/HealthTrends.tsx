@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { useState } from 'react';
 import { Maximize2, Minimize2, X } from 'lucide-react';
 import CommuterTable from './CommuterTable';
@@ -28,7 +28,7 @@ export default function HealthTrends({ isVisible, data }: HealthTrendsProps) {
     const trends = data?.trendingTopics || [];
 
     // Animation variants
-    const panelVariants = {
+    const panelVariants: Variants = {
         hidden: { opacity: 0, x: 50 },
         visible: { opacity: 1, x: 0 },
         expanded: {
