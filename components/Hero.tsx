@@ -8,6 +8,7 @@ import CompanyStats from "./CompanyStats";
 import FactChip from "./FactChip";
 import factsData from "../content/facts.json";
 import { getCompanyData, CompanyData } from "@/app/actions";
+import HealthTrends from "./HealthTrends";
 
 function AnimatedCounter({ end, duration = 1.2 }: { end: number; duration?: number }) {
     const spring = useSpring(0, { duration: duration * 1000, bounce: 0 });
@@ -38,6 +39,8 @@ export default function Hero() {
         <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 md:px-0 transition-all duration-1000">
             <MapBackground
                 focusedState={companyData?.location.state}
+                companyLocation={companyData?.location.coordinates}
+                zoomMultiplier={viewMode === 'details' ? 1 : 1} // Zoom handled by coordinate logic now
             />
 
             {/* Stats Panel (appears on left) */}
@@ -47,7 +50,15 @@ export default function Hero() {
                 )}
             </AnimatePresence>
 
+            {/* Health Trends Panel (appears on right) */}
+            <AnimatePresence>
+                {viewMode === 'details' && (
+                    <HealthTrends isVisible={true} data={companyData} />
+                )}
+            </AnimatePresence>
+
             {/* Main Content Overlay */}
+            {/* ... rest of the component ... */}
             <div className="relative z-30 w-full max-w-4xl mx-auto flex flex-col items-center text-center gap-8 md:gap-10">
 
                 <AnimatePresence mode="wait">
@@ -127,7 +138,10 @@ export default function Hero() {
                         <motion.button
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            onClick={() => setViewMode('landing')}
+                            onClick={() => {
+                                setViewMode('landing');
+                                setCompanyData(null); // Explicitly clear data to trigger map reset
+                            }}
                             className="mt-4 text-white/50 hover:text-white text-sm underline underline-offset-4"
                         >
                             Back to global view

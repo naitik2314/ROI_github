@@ -21,6 +21,23 @@ export interface CompanyData {
         industry?: string;
     };
     summary: string;
+    commuters: {
+        county: string;
+        count: number;
+        percent: number;
+    }[];
+    socialPosts: {
+        id: number;
+        user: string;
+        content: string;
+        sentiment: 'positive' | 'negative' | 'neutral';
+        topic: 'air' | 'happiness' | 'water' | 'general';
+    }[];
+    trendingTopics: {
+        term: string;
+        volume: string;
+        growth: string;
+    }[];
 }
 
 export async function getCompanyData(query: string): Promise<CompanyData | null> {
@@ -37,40 +54,48 @@ export async function getCompanyData(query: string): Promise<CompanyData | null>
             },
             stats: { employeeCount: 'Unknown' },
             summary: 'API Key missing. Please check your .env file.',
+            commuters: [],
+            socialPosts: [],
+            trendingTopics: []
         };
     }
 
     try {
-        const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+        const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
         const prompt = `
-      You are an expert business analyst. I will provide a company name, and you need to return a JSON object with the following information about the company:
+      You are an expert business analyst and urban planner. I will provide a company name, and you need to return a JSON object with the following information:
       1. Official Name
-      2. Headquarters Location:
-         - City
-         - County (or equivalent district)
-         - US State Abbreviation (e.g., CA, NY). If outside US, pick the US HQ if applicable, or the main HQ and use a US-equivalent state code if possible or just the country code if not US.
-         - Approximate Coordinates (Latitude and Longitude) of the headquarters.
-      3. Approximate number of US employees (formatted as a string, e.g. "150,000+"). If US specific is hard to find, give global.
-      4. A very brief 1-sentence summary of what they do.
-      
-      Return ONLY valid JSON in this format, no code blocks:
+      2. Headquarters Location (City, County, State, Coordinates).
+      3. Approximate number of US employees.
+      4. A brief 1-sentence summary.
+      5. Commuter Data: Estimate the top 3 neighboring counties people commute FROM to this HQ. Give approximate counts and percentages.
+      6. Social Media Simulation: Generate 3-4 realistic "social media posts" that might be trending in that county regarding health/environment (Air Quality, Happiness, Water Quality, Traffic Stress). Mix sentiments.
+      7. Google Trends: Identify top 3 rising health-related search terms in this region (e.g. "Flu symptoms", "Gym near me", "Air purifier").
+
+      Return ONLY valid JSON in this format:
       {
         "name": "Company Name",
         "location": {
           "city": "City",
           "county": "County Name",
           "state": "2-letter State Code",
-          "coordinates": {
-            "lat": 37.7749,
-            "lng": -122.4194
-          }
+          "coordinates": { "lat": 0.0, "lng": 0.0 }
         },
-        "stats": {
-          "employeeCount": "100,000",
-          "industry": "Industry Name"
-        },
-        "summary": "One sentence summary."
+        "stats": { "employeeCount": "100,000", "industry": "Tech" },
+        "summary": "Summary.",
+        "commuters": [
+            { "county": "Neighbor County A", "count": 5000, "percent": 15 },
+            { "county": "Neighbor County B", "count": 3000, "percent": 10 }
+        ],
+        "socialPosts": [
+            { "id": 1, "user": "@user123", "content": "Air quality is terrible today in [County]...", "sentiment": "negative", "topic": "air" },
+            { "id": 2, "user": "@happy_local", "content": "Love the new parks...", "sentiment": "positive", "topic": "happiness" }
+        ],
+        "trendingTopics": [
+            { "term": "Flu symptoms", "volume": "High", "growth": "+150%" },
+            { "term": "Yoga classes", "volume": "Medium", "growth": "+40%" }
+        ]
       }
 
       Company: ${query}

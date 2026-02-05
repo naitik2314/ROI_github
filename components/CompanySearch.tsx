@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import { Search, ArrowRight, Loader2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import clsx from "clsx";
+import ModernLoader from "./ModernLoader";
 
 interface CompanySearchProps {
     onSearch: (query: string) => Promise<void>;
@@ -42,7 +43,7 @@ export default function CompanySearch({ onSearch }: CompanySearchProps) {
         <div className="relative w-full max-w-md mx-auto z-50">
             <div className="relative group">
                 <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-white/40 group-focus-within:text-accent-start transition-colors">
-                    {isLoading ? <Loader2 size={20} className="animate-spin" /> : <Search size={20} />}
+                    {isLoading ? <div className="scale-75"><ModernLoader /></div> : <Search size={20} />}
                 </div>
                 <input
                     ref={inputRef}
@@ -62,7 +63,7 @@ export default function CompanySearch({ onSearch }: CompanySearchProps) {
                         disabled={isLoading || !query}
                         className="flex items-center gap-2 bg-gradient-to-r from-accent-start to-accent-end text-ink font-semibold px-4 py-2 rounded-lg hover:brightness-110 transition-all font-sans disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                        {isLoading ? "Searching..." : "Calculate"}
+                        {isLoading ? "Thinking..." : "Calculate"}
                     </button>
                 </div>
             </div>

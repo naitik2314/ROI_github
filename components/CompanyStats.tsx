@@ -31,7 +31,7 @@ export default function CompanyStats({ data }: CompanyStatsProps) {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="fixed left-8 top-1/2 -translate-y-1/2 z-40 w-80 md:w-96"
+            className="fixed left-4 right-4 md:left-8 md:right-auto top-1/2 -translate-y-1/2 z-40 w-auto md:w-96 mx-auto max-w-md"
         >
             <div className="glass-card p-6 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-xl">
                 <div className="mb-6">
