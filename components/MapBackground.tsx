@@ -68,11 +68,11 @@ export default function MapBackground({ focusedState, zoomMultiplier = 1, compan
 
         // Shift slightly to the right to leave room for the panel on the left
         // We want the target point to be at roughly 70% of the screen width
-        const xOffset = 200; // Pixels to shift right
+        // const xOffset = 200; // Pixels to shift right -> User requested centered
 
         return {
             scale: state.scale * zoomMultiplier,
-            x: 250, // Shift more to the right to clear the larger left panel
+            x: 0, // Centered
             y: 0, // Keep vertically centered
             originX,
             originY
@@ -87,9 +87,11 @@ export default function MapBackground({ focusedState, zoomMultiplier = 1, compan
         fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json')
             .then(res => res.json())
             .then(data => {
-                // @ts-ignore
-                const features = feature(data, data.objects.counties).features;
-                setCounties(features);
+                // Filter out AK (02), HI (15), and territories (60, 66, 69, 72, 78)
+                const filtered = features.filter((f: any) =>
+                    !['02', '15', '60', '66', '69', '72', '78'].some(prefix => f.id.startsWith(prefix))
+                );
+                setCounties(filtered);
             })
             .catch(err => console.error("Failed to load counties", err));
     }, []);
