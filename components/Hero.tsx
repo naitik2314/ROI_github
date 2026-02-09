@@ -32,6 +32,11 @@ export default function Hero() {
     const [viewMode, setViewMode] = useState<'landing' | 'details'>('landing');
 
     const handleSearch = async (query: string) => {
+        if (!session) {
+            window.location.href = "/login";
+            return;
+        }
+
         const data = await getCompanyData(query);
         if (data) {
             setCompanyData(data);

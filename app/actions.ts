@@ -1,6 +1,7 @@
 'use server';
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { auth } from '@/auth';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
@@ -52,6 +53,11 @@ export interface CompanyData {
 }
 
 export async function getCompanyData(query: string): Promise<CompanyData | null> {
+    const session = await auth();
+    if (!session) {
+        return null;
+    }
+
     if (!process.env.GEMINI_API_KEY) {
         console.warn('GEMINI_API_KEY is not set');
         // Return mock data for testing if no key is present
