@@ -23,7 +23,11 @@ function AnimatedCounter({ end, duration = 1.2 }: { end: number; duration?: numb
     return <motion.span className="tabular-nums">{display}</motion.span>;
 }
 
+import { UserCircle, LogOut } from "lucide-react";
+import { useSession, signOut } from "next-auth/react";
+
 export default function Hero() {
+    const { data: session } = useSession();
     const [companyData, setCompanyData] = useState<CompanyData | null>(null);
     const [viewMode, setViewMode] = useState<'landing' | 'details'>('landing');
 
@@ -37,6 +41,45 @@ export default function Hero() {
 
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 md:px-0 transition-all duration-1000">
+            {/* Top Right Auth Control */}
+            <div className="absolute top-6 right-6 z-50">
+                {session ? (
+                    <div className="flex items-center gap-3 glass-card px-4 py-2 rounded-full border border-white/10 bg-white/5">
+                        <div className="flex items-center gap-2">
+                            {session.user?.image ? (
+                                <img src={session.user.image} alt={session.user.name || "User"} className="w-6 h-6 rounded-full ring-1 ring-white/20" />
+                            ) : (
+                                <UserCircle size={20} className="text-white/60" />
+                            )}
+                            <span className="text-xs text-white/80 font-medium hidden md:block">{session.user?.name?.split(' ')[0]}</span>
+                        </div>
+                        <div className="w-[1px] h-4 bg-white/10" />
+                        <button
+                            onClick={() => signOut()}
+                            className="text-white/40 hover:text-white transition-colors"
+                            title="Sign Out"
+                        >
+                            <LogOut size={16} />
+                        </button>
+                    </div>
+                ) : (
+                    <a href="/api/auth/signin"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            // We use the NextAuth built-in flow or our custom page
+                            // Since we built a custom page at /login, we should link there? 
+                            // But auth.ts pages.signIn handles redirection usually if triggered by flow. 
+                            // Explicit link to /login is safer.
+                            window.location.href = "/login";
+                        }}
+                        className="flex items-center gap-2 text-sm font-medium text-white/60 hover:text-white transition-colors glass-card px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10"
+                    >
+                        <UserCircle size={18} />
+                        <span>Sign In</span>
+                    </a>
+                )}
+            </div>
+
             <MapBackground
                 focusedState={companyData?.location.state}
                 companyLocation={companyData?.location.coordinates}
