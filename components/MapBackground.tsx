@@ -87,11 +87,9 @@ export default function MapBackground({ focusedState, zoomMultiplier = 1, compan
         fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json')
             .then(res => res.json())
             .then(data => {
-                // Filter out AK (02), HI (15), and territories (60, 66, 69, 72, 78)
-                const filtered = features.filter((f: any) =>
-                    !['02', '15', '60', '66', '69', '72', '78'].some(prefix => f.id.startsWith(prefix))
-                );
-                setCounties(filtered);
+                // @ts-ignore
+                const features = feature(data, data.objects.counties).features;
+                setCounties(features);
             })
             .catch(err => console.error("Failed to load counties", err));
     }, []);
