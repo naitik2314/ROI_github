@@ -13,7 +13,7 @@ import HealthTrends from "./HealthTrends";
 function AnimatedCounter({ end, duration = 1.2 }: { end: number; duration?: number }) {
     const spring = useSpring(0, { duration: duration * 1000, bounce: 0 });
     const display = useTransform(spring, (current) =>
-        `$${current.toFixed(1)} trillion`
+        `$${current.toFixed(1)}T`
     );
 
     useEffect(() => {
@@ -69,19 +69,28 @@ export default function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
                             transition={{ duration: 0.5 }}
-                            className="space-y-10 w-full flex flex-col items-center"
+                            className="space-y-6 w-full flex flex-col items-center"
                         >
                             {/* Headline Group */}
-                            <div className="space-y-4">
+                            <div className="space-y-6">
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.6, ease: "easeOut" }}
                                 >
-                                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
-                                        Over <span className="text-gradient"><AnimatedCounter end={1.1} /></span> is spent annually in costs and lost productivity related to preventable illness, with heart disease, stroke, diabetes, obesity, chronic kidney disease and dental disease standing as the greatest contributors.
+                                    <h1 className="text-7xl md:text-9xl font-bold tracking-tight text-white leading-tight">
+                                        Over <span className="text-gradient"><AnimatedCounter end={1.4} /></span>
                                     </h1>
                                 </motion.div>
+
+                                <motion.p
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 0.2, duration: 0.6 }}
+                                    className="text-xl md:text-2xl text-white/80 font-medium max-w-3xl mx-auto leading-relaxed"
+                                >
+                                    is spent annually in costs and lost productivity related to preventable illness, with heart disease, stroke, diabetes, obesity, chronic kidney disease and dental disease standing as the greatest contributors.
+                                </motion.p>
 
                                 <motion.p
                                     initial={{ opacity: 0 }}
