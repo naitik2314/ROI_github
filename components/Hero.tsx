@@ -13,7 +13,7 @@ import HealthTrends from "./HealthTrends";
 function AnimatedCounter({ end, duration = 1.2 }: { end: number; duration?: number }) {
     const spring = useSpring(0, { duration: duration * 1000, bounce: 0 });
     const display = useTransform(spring, (current) =>
-        `$${current.toFixed(1)}T`
+        `$${current.toFixed(1)} trillion`
     );
 
     useEffect(() => {
@@ -78,11 +78,8 @@ export default function Hero() {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.6, ease: "easeOut" }}
                                 >
-                                    <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-white leading-tight">
-                                        US healthcare costs <br className="hidden md:block" />
-                                        <span className="text-gradient">
-                                            <AnimatedCounter end={1.4} />
-                                        </span>
+                                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
+                                        Over <span className="text-gradient"><AnimatedCounter end={1.1} /></span> is spent annually in costs and lost productivity related to preventable illness, with heart disease, stroke, diabetes, obesity, chronic kidney disease and dental disease standing as the greatest contributors.
                                     </h1>
                                 </motion.div>
 
@@ -92,7 +89,7 @@ export default function Hero() {
                                     transition={{ delay: 0.4, duration: 0.6 }}
                                     className="text-lg md:text-xl text-offwhite/60 font-light max-w-2xl mx-auto"
                                 >
-                                    Discover how much your organization is contributing to this number—and how to reduce it.
+                                    How much is the failure to prevent chronic disease costing your company?
                                 </motion.p>
                             </div>
 
