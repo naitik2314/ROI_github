@@ -122,7 +122,7 @@ export default function Hero() {
                                     transition={{ duration: 0.6, ease: "easeOut" }}
                                 >
                                     <h1 className="text-7xl md:text-9xl font-bold tracking-tight text-white leading-tight">
-                                        Over <span className="text-gradient"><AnimatedCounter end={1.4} /></span>
+                                        Over <span className="text-gradient"><AnimatedCounter end={1.14} /></span>
                                     </h1>
                                 </motion.div>
 
