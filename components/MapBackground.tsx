@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import usa from "@svg-maps/usa";
 import { stateCoordinates } from "@/lib/stateCoordinates";
 import { useState, useEffect, useMemo } from "react";
@@ -18,24 +18,37 @@ export default function MapBackground({ focusedState, zoomMultiplier = 1, compan
     const mapWidth = viewBox[2] || 959;
     const mapHeight = viewBox[3] || 593;
 
+    // Track viewport size so we can compute the centering translation
+    const [vp, setVp] = useState({ w: 0, h: 0 });
+    useEffect(() => {
+        const update = () => setVp({ w: window.innerWidth, h: window.innerHeight });
+        update();
+        window.addEventListener("resize", update);
+        return () => window.removeEventListener("resize", update);
+    }, []);
+
+    // --- Zoom config ---
+    // transformOrigin keeps the state's anchor point fixed while scaling.
+    // We then translate the anchor point to the screen center:
+    //   tx = screenW × (0.5 − originX)
+    //   ty = screenH × (0.5 − originY)
     const targetConfig = useMemo(() => {
-        if (!focusedState || !stateCoordinates[focusedState]) {
+        if (!focusedState || !stateCoordinates[focusedState] || vp.w === 0) {
             return { scale: 1, x: 0, y: 0, originX: 0.5, originY: 0.5 };
         }
-
         const state = stateCoordinates[focusedState];
         const originX = state.x / mapWidth;
         const originY = state.y / mapHeight;
-
         return {
             scale: state.scale * zoomMultiplier,
-            x: 0,
-            y: 0,
+            x: vp.w * (0.5 - originX),
+            y: vp.h * (0.5 - originY),
             originX,
             originY,
         };
-    }, [focusedState, mapWidth, mapHeight, zoomMultiplier]);
+    }, [focusedState, mapWidth, mapHeight, zoomMultiplier, vp]);
 
+    // --- Counties (faint layer) ---
     const [counties, setCounties] = useState<any[]>([]);
     const [countiesLoaded, setCountiesLoaded] = useState(false);
 
@@ -51,12 +64,6 @@ export default function MapBackground({ focusedState, zoomMultiplier = 1, compan
             .catch(err => console.error("Failed to load counties", err));
     }, []);
 
-    // Use stateCoordinates center for the dot — these are already calibrated to the SVG path space
-    const companyDot = useMemo(() => {
-        if (!focusedState || !stateCoordinates[focusedState]) return null;
-        const s = stateCoordinates[focusedState];
-        return { x: s.x, y: s.y };
-    }, [focusedState]);
 
     return (
         <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
@@ -70,7 +77,7 @@ export default function MapBackground({ focusedState, zoomMultiplier = 1, compan
                 aria-hidden="true"
             />
 
-            {/* Map Container */}
+            {/* Map Container — CSS transforms for zoom */}
             <motion.div
                 className="absolute inset-0 z-0 flex items-center justify-center transform-gpu"
                 initial={{ opacity: 0, scale: 0.94 }}
@@ -110,7 +117,7 @@ export default function MapBackground({ focusedState, zoomMultiplier = 1, compan
                             </radialGradient>
                         </defs>
 
-                        {/* Counties Layer - very faint */}
+                        {/* Counties layer */}
                         {countiesLoaded && (
                             <g className="opacity-[0.15] fill-none stroke-white/20" style={{ strokeWidth: "0.5px" }}>
                                 {counties.map((county, i) => (
@@ -119,7 +126,7 @@ export default function MapBackground({ focusedState, zoomMultiplier = 1, compan
                             </g>
                         )}
 
-                        {/* States Layer */}
+                        {/* States layer */}
                         {usa.locations.map((loc: { id: string; name: string; path: string }) => {
                             const isFocused = focusedState === loc.id.toUpperCase();
                             return (
@@ -133,59 +140,33 @@ export default function MapBackground({ focusedState, zoomMultiplier = 1, compan
                                     }}
                                     fill={isFocused ? "url(#focused-fill)" : "#4B5563"}
                                     transition={{ duration: 0.8 }}
-                                    stroke="white"
-                                    strokeWidth={isFocused ? "2.5" : "1"}
+                                    stroke={isFocused ? "#6EE7F9" : "white"}
+                                    strokeWidth={isFocused ? "2" : "1"}
                                     vectorEffect="non-scaling-stroke"
                                     aria-label={loc.name}
                                     filter={isFocused ? "url(#state-glow)" : undefined}
-                                />
+                                >
+                                    {isFocused && (
+                                        <>
+                                            <animate
+                                                attributeName="stroke-opacity"
+                                                values="1;0.3;1"
+                                                dur="2s"
+                                                repeatCount="indefinite"
+                                            />
+                                            <animate
+                                                attributeName="stroke-width"
+                                                values="2;3.5;2"
+                                                dur="2s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </>
+                                    )}
+                                </motion.path>
                             );
                         })}
 
-                        {/* Company Location Ping Dot */}
-                        <AnimatePresence>
-                            {companyDot && (
-                                <g key="company-dot">
-                                    {/* SVG-native pulse rings — animate r so they expand from the circle center, not (0,0) */}
-                                    <circle
-                                        cx={companyDot.x}
-                                        cy={companyDot.y}
-                                        fill="none"
-                                        stroke="#6EE7F9"
-                                        strokeWidth="1"
-                                        r="4"
-                                        opacity="0"
-                                    >
-                                        <animate attributeName="r" values="4;28" dur="2s" repeatCount="indefinite" begin="0s" />
-                                        <animate attributeName="opacity" values="0.6;0" dur="2s" repeatCount="indefinite" begin="0s" />
-                                    </circle>
-                                    <circle
-                                        cx={companyDot.x}
-                                        cy={companyDot.y}
-                                        fill="none"
-                                        stroke="#6EE7F9"
-                                        strokeWidth="1.5"
-                                        r="4"
-                                        opacity="0"
-                                    >
-                                        <animate attributeName="r" values="4;18" dur="2s" repeatCount="indefinite" begin="0.6s" />
-                                        <animate attributeName="opacity" values="0.8;0" dur="2s" repeatCount="indefinite" begin="0.6s" />
-                                    </circle>
-                                    {/* Core dot */}
-                                    <motion.circle
-                                        cx={companyDot.x}
-                                        cy={companyDot.y}
-                                        r={4}
-                                        fill="url(#dot-gradient)"
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                        transition={{ duration: 0.5 }}
-                                        style={{ filter: "drop-shadow(0 0 6px rgba(110,231,249,0.9))" }}
-                                    />
-                                </g>
-                            )}
-                        </AnimatePresence>
+
                     </svg>
                 </div>
             </motion.div>
