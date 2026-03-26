@@ -83,7 +83,7 @@ export async function getCompanyData(query: string): Promise<CompanyData | null>
     }
 
     try {
-        const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+        const model = genAI.getGenerativeModel({ model: 'gemini-2.5-pro' });
 
         const prompt = `
       You are an expert business analyst and urban planner. I will provide a company name, and you need to return a JSON object with the following information:
