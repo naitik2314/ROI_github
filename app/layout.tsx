@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { SessionProvider } from "next-auth/react";
 
 const inter = Inter({
     subsets: ["latin"],
     variable: "--font-inter",
+    display: "swap",
+});
+
+const outfit = Outfit({
+    subsets: ["latin"],
+    variable: "--font-outfit",
     display: "swap",
 });
 
@@ -29,7 +35,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className="dark">
-            <body className={`${inter.variable} antialiased`}>
+            <body className={`${inter.variable} ${outfit.variable} font-sans antialiased bg-[#030614] text-gray-50`}>
                 <SessionProvider>
                     {children}
                 </SessionProvider>

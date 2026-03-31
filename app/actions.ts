@@ -52,6 +52,60 @@ export interface CompanyData {
     };
 }
 
+export interface CompanyLocation {
+    name: string;
+    location: {
+        city: string;
+        county: string;
+        state: string; // Two-letter abbreviation, e.g., "CA", "NY"
+        coordinates: {
+            lat: number;
+            lng: number;
+        };
+    };
+}
+
+export async function getCompanyLocation(query: string): Promise<CompanyLocation | null> {
+    if (!process.env.GEMINI_API_KEY) {
+        return {
+            name: query,
+            location: {
+                city: 'Unknown',
+                county: 'Unknown',
+                state: 'CA',
+                coordinates: { lat: 37.7749, lng: -122.4194 }
+            }
+        };
+    }
+
+    try {
+        const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+        const prompt = `
+      You are an expert business analyst. Provide the headquarters location for this company. Return ONLY valid JSON in this exact format, with a 2-letter state abbreviation. Be exceptionally fast.
+      {
+        "name": "Company Name",
+        "location": {
+          "city": "City",
+          "county": "County Name",
+          "state": "2-letter State Code",
+          "coordinates": { "lat": 0.0, "lng": 0.0 }
+        }
+      }
+      
+      Company: ${query}
+    `;
+
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const text = response.text();
+        const cleanText = text.replace(/```json\n?|\n?```/g, '').trim();
+        return JSON.parse(cleanText);
+    } catch (error) {
+        console.error('Error fetching company location:', error);
+        return null;
+    }
+}
+
 export async function getCompanyData(query: string): Promise<CompanyData | null> {
     if (!process.env.GEMINI_API_KEY) {
         console.warn('GEMINI_API_KEY is not set');

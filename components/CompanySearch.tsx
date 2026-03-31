@@ -43,25 +43,30 @@ export default function CompanySearch({ onSearch, examples = [] }: CompanySearch
     const showExamples = isFocused && !isLoading && examples.length > 0 && query.length === 0;
 
     return (
-        <div className="relative w-full max-w-lg mx-auto z-50">
-            {/* Glow effect behind input */}
-            <div
-                className="absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-500 pointer-events-none"
-                style={{
-                    background: "linear-gradient(135deg, rgba(110,231,249,0.2), rgba(167,139,250,0.2))",
-                    filter: "blur(8px)",
-                    opacity: isFocused ? 1 : 0,
+        <div className="relative w-full max-w-2xl mx-auto z-50">
+            {/* Animated Glow effect behind input */}
+            <motion.div
+                className="absolute -inset-[2px] rounded-[2rem] pointer-events-none bg-gradient-to-r from-[#6EE7F9] via-[#A78BFA] to-[#6EE7F9] blur-md z-0"
+                initial={{ opacity: 0 }}
+                animate={{
+                    opacity: isFocused ? 0.6 : 0,
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                 }}
+                transition={{
+                    opacity: { duration: 0.4 },
+                    backgroundPosition: { duration: 8, repeat: Infinity, ease: "linear" }
+                }}
+                style={{ backgroundSize: "200% 200%" }}
                 aria-hidden="true"
             />
 
-            <div className="relative group">
+            <div className="relative group z-10">
                 {/* Search Icon / Loader */}
-                <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-white/30 group-focus-within:text-accent-start transition-colors duration-300 z-10">
+                <div className="absolute inset-y-0 left-0 flex items-center pl-6 pointer-events-none text-white/40 group-focus-within:text-[#6EE7F9] transition-colors duration-300 z-10">
                     {isLoading ? (
                         <div className="scale-75"><ModernLoader /></div>
                     ) : (
-                        <Search size={18} />
+                        <Search size={22} />
                     )}
                 </div>
 
@@ -70,7 +75,7 @@ export default function CompanySearch({ onSearch, examples = [] }: CompanySearch
                     ref={inputRef}
                     id="company-search-input"
                     type="text"
-                    className="w-full pl-11 pr-36 py-4 text-base glass-input rounded-2xl text-white placeholder-white/25 outline-none transition-all duration-300 focus:ring-1 focus:ring-accent-start/40 focus:bg-white/8 disabled:opacity-60"
+                    className="w-full pl-16 pr-44 py-5 text-lg lg:text-xl rounded-[2rem] text-white placeholder-white/30 outline-none transition-all duration-300 bg-[#0A0F1D]/80 backdrop-blur-2xl border border-white/10 hover:border-white/20 focus:border-[#6EE7F9]/50 focus:bg-[#0F1528] disabled:opacity-60 font-outfit shadow-2xl"
                     placeholder="Search any company (e.g. Google)…"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
@@ -83,12 +88,12 @@ export default function CompanySearch({ onSearch, examples = [] }: CompanySearch
                 />
 
                 {/* CTA Button */}
-                <div className="absolute inset-y-0 right-2 flex items-center">
+                <div className="absolute inset-y-0 right-2.5 flex items-center pointer-events-none">
                     <button
                         id="company-search-button"
                         onClick={() => handleSearch()}
                         disabled={isLoading || !query.trim()}
-                        className="relative flex items-center gap-2 bg-gradient-to-r from-accent-start to-accent-end text-ink font-semibold text-sm px-5 py-2.5 rounded-xl hover:brightness-110 active:scale-95 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed disabled:scale-100 overflow-hidden"
+                        className="pointer-events-auto relative flex items-center justify-center gap-2 bg-white text-[#030614] font-bold text-sm md:text-base px-6 py-3 rounded-[1.5rem] hover:scale-[1.03] active:scale-95 transition-all duration-300 disabled:opacity-0 disabled:cursor-not-allowed disabled:scale-100 shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] font-outfit tracking-wide min-w-[140px]"
                         aria-label="Calculate ROI"
                     >
                         <AnimatePresence mode="wait">
@@ -124,22 +129,22 @@ export default function CompanySearch({ onSearch, examples = [] }: CompanySearch
             <AnimatePresence>
                 {showExamples && (
                     <motion.div
-                        initial={{ opacity: 0, y: -8, scale: 0.98 }}
+                        initial={{ opacity: 0, y: 10, scale: 0.98 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: -8, scale: 0.98 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute top-full mt-2 w-full glass-card rounded-xl border border-white/10 bg-ink/80 backdrop-blur-xl overflow-hidden z-50"
+                        exit={{ opacity: 0, y: 10, scale: 0.98 }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
+                        className="absolute top-full mt-4 w-full bg-[#0A0F1D]/60 backdrop-blur-3xl rounded-[2rem] border border-white/10 overflow-hidden z-50 shadow-2xl p-2"
                     >
-                        <div className="px-3 py-2 text-[10px] font-semibold text-white/30 uppercase tracking-widest border-b border-white/5">
+                        <div className="px-5 py-3 text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] font-outfit">
                             Try an example
                         </div>
                         {examples.map((company) => (
                             <button
                                 key={company}
                                 onMouseDown={() => handleSearch(company)}
-                                className="w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors group"
+                                className="w-full flex items-center gap-3 px-5 py-4 text-left text-base text-white/70 hover:text-white hover:bg-white/5 transition-colors group rounded-2xl font-outfit"
                             >
-                                <Search size={13} className="text-white/20 group-hover:text-accent-start transition-colors" />
+                                <Search size={16} className="text-white/20 group-hover:text-[#6EE7F9] transition-colors" />
                                 {company}
                             </button>
                         ))}

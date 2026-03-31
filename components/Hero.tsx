@@ -7,7 +7,7 @@ import CompanySearch from "./CompanySearch";
 import CompanyStats from "./CompanyStats";
 import FactChip from "./FactChip";
 import factsData from "../content/facts.json";
-import { getCompanyData, CompanyData } from "@/app/actions";
+import { getCompanyData, CompanyData, getCompanyLocation } from "@/app/actions";
 import HealthTrends from "./HealthTrends";
 import { UserCircle, LogOut, Activity, Zap } from "lucide-react";
 import { useSession, signOut } from "next-auth/react";
@@ -50,55 +50,65 @@ function AuroraBg() {
 // Top logo/wordmark
 function Wordmark() {
     return (
-        <div className="absolute top-6 left-6 z-50 flex items-center gap-2.5 select-none">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-start/80 to-accent-end/80 flex items-center justify-center shadow-lg shadow-accent-start/20">
-                <Activity size={16} className="text-ink" strokeWidth={2.5} />
+        <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="absolute top-6 left-6 z-50 flex items-center gap-3 select-none glass-card px-4 py-2.5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-colors cursor-default"
+        >
+            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#6EE7F9] to-[#A78BFA] flex items-center justify-center shadow-[0_0_20px_rgba(110,231,249,0.4)]">
+                <Activity size={18} className="text-[#030614]" strokeWidth={2.5} />
             </div>
-            <span className="font-bold tracking-tight text-white/90 text-sm hidden md:block">
-                Health<span className="text-gradient">ROI</span>
+            <span className="font-outfit font-semibold tracking-tight text-white/95 text-base hidden md:block">
+                Health<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6EE7F9] to-[#A78BFA]">ROI</span>
             </span>
-        </div>
+        </motion.div>
     );
 }
 
 // Auth controls in top right
 function AuthControls({ session }: { session: any }) {
     return (
-        <div className="absolute top-6 right-6 z-50">
+        <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.8, ease: "easeOut" }}
+            className="absolute top-6 right-6 z-50"
+        >
             {session ? (
-                <div className="flex items-center gap-3 glass-card px-4 py-2 rounded-full border border-white/10 bg-white/5">
+                <div className="flex items-center gap-3 px-5 py-2.5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl">
                     <div className="flex items-center gap-2">
                         {session.user?.image ? (
                             <img
                                 src={session.user.image}
                                 alt={session.user.name || "User"}
-                                className="w-6 h-6 rounded-full ring-1 ring-accent-start/30"
+                                className="w-7 h-7 rounded-full ring-2 ring-[#A78BFA]/40"
                             />
                         ) : (
-                            <UserCircle size={20} className="text-white/60" />
+                            <UserCircle size={22} className="text-white/60" />
                         )}
-                        <span className="text-xs text-white/80 font-medium hidden md:block">{session.user?.name?.split(' ')[0]}</span>
+                        <span className="text-sm text-white/90 font-medium hidden md:block font-outfit">{session.user?.name?.split(' ')[0]}</span>
                     </div>
-                    <div className="w-[1px] h-4 bg-white/10" />
+                    <div className="w-[1px] h-5 bg-white/15" />
                     <button
                         onClick={() => signOut()}
                         className="text-white/40 hover:text-red-400 transition-colors"
                         title="Sign Out"
                         aria-label="Sign out"
                     >
-                        <LogOut size={15} />
+                        <LogOut size={16} />
                     </button>
                 </div>
             ) : (
                 <a
                     href="/login"
-                    className="flex items-center gap-2 text-sm font-medium text-white/70 hover:text-white transition-all glass-card px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-accent-start/30"
+                    className="flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white transition-all px-5 py-2.5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-[#6EE7F9]/30 shadow-[0_0_30px_rgba(0,0,0,0.5)] font-outfit"
                 >
-                    <UserCircle size={16} />
+                    <UserCircle size={18} />
                     <span>Sign In</span>
                 </a>
             )}
-        </div>
+        </motion.div>
     );
 }
 
@@ -108,18 +118,76 @@ export default function Hero() {
     const { data: session } = useSession();
     const [companyData, setCompanyData] = useState<CompanyData | null>(null);
     const [viewMode, setViewMode] = useState<'landing' | 'details'>('landing');
+    const [loadingStage, setLoadingStage] = useState<'idle' | 'flash' | 'hex_layer' | 'point_layer' | 'complete'>('idle');
+    const [tempLocation, setTempLocation] = useState<{ state?: string, county?: string, coordinates?: {lat: number, lng: number} } | null>(null);
 
     const handleSearch = async (query: string) => {
+        // Reset state
+        setCompanyData(null);
+        setTempLocation(null);
+        setViewMode('landing');
+        setLoadingStage('flash');
+        
+        // Tier 1: Flash Location Fetch
+        const loc = await getCompanyLocation(query);
+        if (loc) {
+            setTempLocation({
+                state: loc.location.state,
+                county: loc.location.county,
+                coordinates: loc.location.coordinates
+            });
+        }
+        
+        // Tier 2: Sequence visual layers + parallel data fetch
+        setLoadingStage('hex_layer');
+        
+        // Progress to point_layer purely for UX after a short delay
+        const pointLayerTimeout = setTimeout(() => {
+            setLoadingStage('point_layer');
+        }, 1800);
+
         const data = await getCompanyData(query);
+        clearTimeout(pointLayerTimeout);
+
         if (data) {
             setCompanyData(data);
+            setLoadingStage('complete');
             setViewMode('details');
+        } else {
+            setLoadingStage('idle');
         }
     };
 
     const handleReset = () => {
         setViewMode('landing');
+        setLoadingStage('idle');
         setCompanyData(null);
+        setTempLocation(null);
+    };
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: { staggerChildren: 0.15, delayChildren: 0.2 }
+        },
+        exit: {
+            opacity: 0,
+            y: -30,
+            filter: "blur(12px)",
+            transition: { duration: 0.6, ease: "easeInOut", staggerChildren: 0.05, staggerDirection: -1 }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
+        show: { 
+            opacity: 1, 
+            y: 0, 
+            filter: "blur(0px)",
+            transition: { duration: 0.8, ease: "easeOut" } 
+        },
+        exit: { opacity: 0, y: -20, filter: "blur(8px)", transition: { duration: 0.4 } }
     };
 
     return (
@@ -138,9 +206,11 @@ export default function Hero() {
 
             {/* Map */}
             <MapBackground
-                focusedState={companyData?.location.state}
-                companyLocation={companyData?.location.coordinates}
+                focusedState={companyData?.location.state || tempLocation?.state}
+                focusedCounty={companyData?.location.county || tempLocation?.county}
+                companyLocation={companyData?.location.coordinates || tempLocation?.coordinates}
                 zoomMultiplier={viewMode === 'details' ? 1 : 1}
+                loadingStage={loadingStage}
             />
 
             {/* Left Stats Panel */}
@@ -161,71 +231,59 @@ export default function Hero() {
             <div className="relative z-30 w-full max-w-4xl mx-auto flex flex-col items-center text-center gap-8 md:gap-10">
 
                 <AnimatePresence mode="wait">
-                    {viewMode === 'landing' ? (
+                    {viewMode === 'landing' && loadingStage === 'idle' ? (
                         <motion.div
                             key="landing-content"
-                            initial={{ opacity: 0, y: 24 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20, filter: "blur(8px)" }}
-                            transition={{ duration: 0.5 }}
+                            variants={containerVariants}
+                            initial="hidden"
+                            animate="show"
+                            exit="exit"
                             className="space-y-6 w-full flex flex-col items-center"
                         >
                             {/* Badge */}
                             <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: 0.1, duration: 0.4 }}
-                                className="flex items-center gap-2 bg-accent-start/10 border border-accent-start/20 px-3 py-1.5 rounded-full"
+                                variants={itemVariants}
+                                className="flex items-center gap-2.5 bg-[#6EE7F9]/10 border border-[#6EE7F9]/20 px-4 py-2 rounded-full backdrop-blur-md shadow-[0_0_20px_rgba(110,231,249,0.15)]"
                             >
-                                <Zap size={12} className="text-accent-start" />
-                                <span className="text-xs font-medium text-accent-start tracking-wide">AI-Powered Analysis</span>
+                                <Zap size={14} className="text-[#6EE7F9]" />
+                                <span className="text-[13px] font-semibold text-[#6EE7F9] tracking-[0.15em] uppercase font-outfit">AI-Powered Analysis</span>
                             </motion.div>
 
                             {/* Headline Group */}
-                            <div className="space-y-5">
-                                <motion.div
-                                    initial={{ opacity: 0, y: 24 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.7, ease: "easeOut" }}
-                                >
-                                    <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-white leading-[1.05]">
+                            <div className="space-y-6">
+                                <motion.div variants={itemVariants}>
+                                    <h1 className="text-7xl md:text-[7rem] font-bold tracking-tighter text-white leading-[0.95] font-outfit drop-shadow-2xl">
                                         Over{" "}
-                                        <span className="text-gradient drop-shadow-glow-accent">
+                                        <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-[#A78BFA] drop-shadow-[0_0_40px_rgba(167,139,250,0.5)]">
                                             <AnimatedCounter end={1.14} />
                                         </span>
                                     </h1>
                                 </motion.div>
 
                                 <motion.p
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ delay: 0.3, duration: 0.6 }}
-                                    className="text-lg md:text-xl text-white/70 font-light max-w-2xl mx-auto leading-relaxed"
+                                    variants={itemVariants}
+                                    className="text-xl md:text-2xl text-white/60 font-light max-w-3xl mx-auto leading-relaxed"
                                 >
                                     is spent annually in costs and lost productivity from{" "}
-                                    <span className="text-white/90 font-medium">preventable illness</span>
+                                    <span className="text-white font-medium drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">preventable illness</span>
                                     {" "}— heart disease, stroke, diabetes, obesity, chronic kidney disease, and dental disease.
                                 </motion.p>
 
                                 <motion.p
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ delay: 0.5, duration: 0.6 }}
-                                    className="text-base md:text-lg text-white/40 font-light max-w-xl mx-auto"
+                                    variants={itemVariants}
+                                    className="text-lg md:text-xl text-white/40 font-light max-w-xl mx-auto italic"
                                 >
-                                    How much is chronic disease costing <em>your</em> company?
+                                    How much is chronic disease costing <em className="text-white/60 font-medium not-italic">your</em> company?
                                 </motion.p>
                             </div>
 
                             {/* Facts Row */}
                             <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 0.6, duration: 0.5 }}
-                                className="flex flex-wrap items-center justify-center gap-2.5"
+                                variants={itemVariants}
+                                className="flex flex-wrap items-center justify-center gap-3 mt-4"
                             >
                                 {factsData.slice(0, 3).map((fact, i) => (
-                                    <FactChip key={fact.id} label={fact.text} delay={0.7 + (i * 0.1)} />
+                                    <FactChip key={fact.id} label={fact.text} delay={0} />
                                 ))}
                             </motion.div>
                         </motion.div>
@@ -246,7 +304,7 @@ export default function Hero() {
                     transition={{ delay: 0.9, duration: 0.5 }}
                 >
                     <AnimatePresence>
-                        {viewMode === 'landing' && (
+                        {viewMode === 'landing' && loadingStage === 'idle' && (
                             <motion.div
                                 initial={{ opacity: 0, y: -5 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -258,7 +316,30 @@ export default function Hero() {
                         )}
                     </AnimatePresence>
 
-                    <CompanySearch onSearch={handleSearch} examples={EXAMPLE_COMPANIES} />
+                    {/* Progress Indicator Over Search */}
+                    <AnimatePresence>
+                        {loadingStage !== 'idle' && loadingStage !== 'complete' && (
+                            <motion.div 
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.95 }}
+                                className="absolute -top-12 left-0 right-0 flex justify-center z-40"
+                            >
+                                <div className="glass-card px-4 py-2 rounded-full border border-accent-start/30 bg-ink/80 backdrop-blur-md flex items-center gap-3 shadow-[0_0_20px_rgba(110,231,249,0.2)]">
+                                    <div className="w-2 h-2 rounded-full bg-accent-start animate-ping" />
+                                    <span className="text-sm font-medium text-accent-start tracking-wider">
+                                        {loadingStage === 'flash' && "Locating Headquarters..."}
+                                        {loadingStage === 'hex_layer' && "Analyzing Regional Matrix..."}
+                                        {loadingStage === 'point_layer' && "Aggregating Health Data..."}
+                                    </span>
+                                </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+
+                    {loadingStage === 'idle' && (
+                        <CompanySearch onSearch={handleSearch} examples={EXAMPLE_COMPANIES} />
+                    )}
 
                     {viewMode === 'details' && (
                         <motion.button
