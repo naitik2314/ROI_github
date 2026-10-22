@@ -1,10 +1,18 @@
 {
+  "schemaVersion": 2,
   "count": 10000,
   "synthetic": true,
   "seed": 20261020,
   "from": "2026-07-23",
   "to": "2026-10-20",
-  "scope": "Overall health-related sentiment across Michigan communities, eight health topics, and four simulated source categories. Not a Corewell or hospital review dashboard.",
+  "scope": "Overall health-related conversation across Michigan communities; national policy scenarios carry no local county attribution.",
+  "countsBySource": {
+    "social": 6440,
+    "news": 1860,
+    "hearings": 36,
+    "trends": 1664
+  },
+  "sentimentScoredCount": 8336,
   "topics": [
     "Care access",
     "Affordability",
@@ -25,7 +33,68 @@
     "Ingham",
     "Kalamazoo"
   ],
-  "method": "Seeded fixture generator with assigned sentiment scores. 9,400 general-health records and 120 records per event. No actual posts, testimony, search metrics, or patient data.",
+  "method": "Source-specific synthetic fixtures: fictional community posts, regional news outlines, six fictional policy hearing sessions, and weekly search-interest series. Source labels are not randomly assigned to the same text. No actual posts, testimony, search metrics, or patient data.",
+  "sourceRules": {
+    "hearings": "36 excerpts from six explicitly fictional national policy sessions; no Corewell, provider-specific events, invented quotations, named public officials, or local county attribution.",
+    "trends": "1,664 weekly query/county observations. Each 13-week series peaks at 100. Sentiment is null and these rows are excluded from all sentiment averages and percentages.",
+    "events": "120 records per event: 12 fictional news outlines and 108 community reactions. No hearing or search-interest records are linked to these events."
+  },
+  "policySessions": [
+    {
+      "date": "2026-07-29",
+      "committee": "Senate HELP committee scenario",
+      "topic": "Workforce & staffing",
+      "agenda": "Health workforce capacity",
+      "id": "SIM-POLICY-1",
+      "segments": 6,
+      "synthetic": true
+    },
+    {
+      "date": "2026-09-09",
+      "committee": "House Energy and Commerce committee scenario",
+      "topic": "Affordability",
+      "agenda": "Prescription affordability",
+      "id": "SIM-POLICY-2",
+      "segments": 6,
+      "synthetic": true
+    },
+    {
+      "date": "2026-09-16",
+      "committee": "Senate HELP committee scenario",
+      "topic": "Mental health",
+      "agenda": "Behavioral health access",
+      "id": "SIM-POLICY-3",
+      "segments": 6,
+      "synthetic": true
+    },
+    {
+      "date": "2026-09-23",
+      "committee": "House Energy and Commerce committee scenario",
+      "topic": "Environmental health",
+      "agenda": "Environmental exposure and community health",
+      "id": "SIM-POLICY-4",
+      "segments": 6,
+      "synthetic": true
+    },
+    {
+      "date": "2026-09-30",
+      "committee": "Senate Finance committee scenario",
+      "topic": "Care access",
+      "agenda": "Coverage and primary care access",
+      "id": "SIM-POLICY-5",
+      "segments": 6,
+      "synthetic": true
+    },
+    {
+      "date": "2026-10-07",
+      "committee": "Senate HELP committee scenario",
+      "topic": "Health policy",
+      "agenda": "Community health preparedness",
+      "id": "SIM-POLICY-6",
+      "segments": 6,
+      "synthetic": true
+    }
+  ],
   "events": [
     {
       "id": "air-quality-advisory",
@@ -38,7 +107,7 @@
       "description": "An illustrative air quality advisory prompts concerns about respiratory symptoms, outdoor work, and access to clean indoor spaces.",
       "response": "Residents are concerned about respiratory health and safe outdoor activity after an illustrative air quality advisory.",
       "syntheticResponseRecords": 120,
-      "note": "Entire event and all associated responses are illustrative, not actual reported events."
+      "note": "Entire event and all associated responses are illustrative."
     },
     {
       "id": "coverage-disruption",
@@ -51,7 +120,7 @@
       "description": "An illustrative insurance coverage disruption raises concerns about out-of-pocket costs, prescription access, and delayed care.",
       "response": "An illustrative coverage disruption is prompting concerns about medical bills and prescription affordability.",
       "syntheticResponseRecords": 120,
-      "note": "Entire event and all associated responses are illustrative, not actual reported events."
+      "note": "Entire event and all associated responses are illustrative."
     },
     {
       "id": "mental-health-access",
@@ -64,7 +133,7 @@
       "description": "An illustrative expansion of community mental health appointments creates a positive moment around timely support and access.",
       "response": "An illustrative expansion of community mental health appointments is a welcome improvement in access to support.",
       "syntheticResponseRecords": 120,
-      "note": "Entire event and all associated responses are illustrative, not actual reported events."
+      "note": "Entire event and all associated responses are illustrative."
     },
     {
       "id": "community-screening",
@@ -77,7 +146,7 @@
       "description": "An illustrative mobile screening program brings preventive care closer to neighborhoods and workplaces.",
       "response": "An illustrative mobile screening program makes preventive care easier to reach in the community.",
       "syntheticResponseRecords": 120,
-      "note": "Entire event and all associated responses are illustrative, not actual reported events."
+      "note": "Entire event and all associated responses are illustrative."
     },
     {
       "id": "corewell-er-staffing",
@@ -93,7 +162,7 @@
       "publisher": "Deadline Detroit",
       "url": "https://www.deadlinedetroit.com/articles/35190/starkman_corewell_to_outsource_more_er_care_to_controversial_staffing_firm_backed_by_private_equity",
       "syntheticResponseRecords": 120,
-      "note": "Reported planned outsourcing; not independently confirmed here. Publication date, not a verified implementation date. All responses are simulated."
+      "note": "Reported plan; not independently confirmed here. Publication date, not a verified implementation date. All linked rows are invented news outlines or community reactions."
     }
   ]
 }
