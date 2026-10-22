@@ -7,14 +7,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "node --test tests/*.test.mjs",
+    "data:generate": "node scripts/generate-sentiment.mjs",
+    "typecheck": "tsc --noEmit",
+    "test:ui": "node scripts/check-ui.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@google/generative-ai": "^0.24.1",
     "@svg-maps/usa": "^2.0.0",
     "clsx": "^2.1.1",
     "d3-geo": "^3.1.1",

@@ -63,11 +63,10 @@ export default function CompanySearch({ onSearch }: CompanySearchProps) {
                         disabled={isLoading || !query}
                         className="flex items-center gap-2 bg-gradient-to-r from-accent-start to-accent-end text-ink font-semibold px-4 py-2 rounded-lg hover:brightness-110 transition-all font-sans disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                        {isLoading ? "Thinking..." : "Calculate"}
+                        {isLoading ? "Loading..." : "Calculate"}
                     </button>
                 </div>
             </div>
         </div>
     );
 }
-
