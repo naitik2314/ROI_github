@@ -1,5 +1,6 @@
 import { createRequire } from 'node:module';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || '/Users/ho9307/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 const browser = await chromium.launch({ headless: true });
@@ -11,6 +12,8 @@ try {
   await page.screenshot({ path: '/private/tmp/fieldwork-desktop.png', fullPage: true });
   await page.screenshot({ path: '/private/tmp/fieldwork-readable.png', fullPage: false });
   assert.equal(await page.locator('.record-card').count(), 4);
+  assert.equal(await page.locator('.demo-status, .synthetic-tag').count(), 0);
+  assert.ok(!(await page.locator('.chart-foot').innerText()).includes('synthetic'));
   await page.locator('.sentiment-chart').scrollIntoViewIfNeeded();
   await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
   await page.evaluate(() => {
@@ -22,9 +25,33 @@ try {
   for (const point of hoverPoints) await page.mouse.move(point.x, point.y);
   await page.locator('.chart-tooltip').waitFor();
   assert.equal(await page.evaluate(() => { window.plotObserver.disconnect(); return window.plotMutations; }), 0, 'Hover must not mutate or rebuild the plotted SVG');
+  const dot = await page.locator('.record-dot').evaluateAll(nodes => {
+    for (const node of nodes) { const r = node.getBoundingClientRect(), x = r.x + r.width / 2, y = r.y + r.height / 2; if (document.elementFromPoint(x, y) === node) return { x, y, id: node.getAttribute('data-record-id') }; }
+    return null;
+  });
+  assert.ok(dot, 'At least one individual record dot must be directly clickable');
+  await page.mouse.click(dot.x, dot.y);
+  await page.getByRole('slider', { name: 'Passage sentiment journey' }).waitFor();
+  await page.locator('.record-lens').screenshot({ path: '/private/tmp/fieldwork-passage-reader.png' });
+  await page.getByText('Source details & methodology', { exact: true }).click();
+  assert.ok((await page.locator('.record-facts').innerText()).includes(dot.id));
+  await page.getByText('Source details & methodology', { exact: true }).click();
+  const journey = page.getByRole('slider', { name: 'Passage sentiment journey' });
+  await journey.focus();
+  await page.keyboard.press('Home');
+  assert.equal(await page.locator('.passage-text.active').getAttribute('data-passage-index'), '0');
+  await page.keyboard.press('End');
+  assert.equal(await page.locator('.passage-text.active').getAttribute('data-passage-index'), String(await page.locator('.passage-text').count() - 1));
+  await page.getByRole('button', { name: 'Read full paragraph', exact: true }).click();
+  await page.setViewportSize({ width: 390, height: 1000 });
+  assert.ok(await page.locator('.record-lens').evaluate(element => element.scrollWidth <= element.clientWidth), 'Record reader must fit a mobile viewport');
+  await page.locator('.record-lens').screenshot({ path: '/private/tmp/fieldwork-passage-mobile.png' });
+  await page.setViewportSize({ width: 1512, height: 1100 });
+  assert.equal(await page.locator('.passage-text.active').count(), 0);
+  await page.getByLabel('Close selected record').click();
 
-  assert.equal(await page.locator('.context-date').innerText(), 'Oct 20');
-  assert.ok(!(await page.locator('.context-panel').innerText()).includes('Corewell'));
+
+
   await page.getByRole('group', { name: 'Filter by source' }).getByRole('button', { name: /Social media/ }).click();
   assert.ok(Number((await page.locator('.overview-metrics strong').first().innerText()).replaceAll(',', '')) < 10000);
   await page.getByRole('group', { name: 'Filter by source' }).getByRole('button', { name: /Congressional hearings/ }).click();
@@ -32,8 +59,16 @@ try {
   assert.equal(await page.locator('.health-event-chip').count(), 0);
   assert.ok(!(await page.locator('.record-list').innerText()).includes('Corewell'));
   await page.locator('.record-card').first().click();
+  await page.getByRole('slider', { name: 'Passage sentiment journey' }).waitFor();
+  await page.getByText('Source details & methodology', { exact: true }).click();
   assert.ok((await page.locator('.source-context').innerText()).includes('Fictional session'));
-  await page.keyboard.press('Escape');
+  await page.getByText('Source details & methodology', { exact: true }).click();
+  await page.getByRole('slider', { name: 'Passage sentiment journey' }).focus();
+  await page.keyboard.press('Home');
+  const firstPassageScore = await page.locator('.passage-score').innerText();
+  await page.keyboard.press('End');
+  assert.notEqual(await page.locator('.passage-score').innerText(), firstPassageScore);
+  await page.getByLabel('Close selected record').click();
   await page.getByRole('group', { name: 'Filter by source' }).getByRole('button', { name: /Search interest/ }).click();
   await page.locator('.search-interest-notice').waitFor();
   assert.equal(await page.locator('.score-value').innerText(), '—');
@@ -44,6 +79,7 @@ try {
   assert.notEqual(await page.locator('.context-date').innerText(), searchPeriod);
   await page.locator('.record-card').first().click();
   await page.locator('.drawer-metric').filter({ hasText: 'Search-interest index' }).waitFor();
+  await page.getByText('Source details & methodology', { exact: true }).click();
   assert.ok((await page.locator('.source-context').innerText()).includes('not directly comparable'));
   await page.keyboard.press('Escape');
   await page.getByRole('button', { name: /All sources/ }).click();
@@ -76,19 +112,29 @@ try {
   assert.ok((await page.locator('.context-panel').innerText()).includes('Corewell Health'));
   await page.locator('.record-card').first().click();
   await page.locator('.selected-record').waitFor();
+  await page.getByRole('slider', { name: 'Passage sentiment journey' }).waitFor();
+  await page.getByRole('link', { name: 'Read source report', exact: true }).focus();
   await page.keyboard.press('Tab');
-  assert.equal(await page.evaluate(() => document.activeElement.textContent), 'Read source report');
+  assert.equal(await page.evaluate(() => document.activeElement.getAttribute('aria-label')), 'Close selected record');
   await page.getByLabel('Close selected record').click();
   await page.getByRole('button', { name: /Aug 9: Air quality advisory/ }).click();
-  assert.ok((await page.locator('.context-panel').innerText()).includes('ILLUSTRATIVE HEALTH EVENT'));
+  assert.ok((await page.locator('.context-panel').innerText()).includes('HEALTH EVENT'));
   assert.ok(!(await page.locator('.context-panel').innerText()).includes('Corewell'));
   await page.getByRole('button', { name: /Sep 12: Mental health access/ }).click();
   assert.ok((await page.locator('.context-panel').innerText()).includes('mental health'));
 
   const downloadPromise = page.waitForEvent('download');
   await page.getByRole('button', { name: /Export data/ }).click();
+  await page.getByRole('dialog', { name: 'About this demonstration data' }).waitFor();
+  assert.ok((await page.locator('.export-modal').innerText()).includes('Synthetic demonstration data'));
+  await page.locator('.export-modal').screenshot({ path: '/private/tmp/fieldwork-export-disclosure.png' });
+  await page.getByRole('button', { name: 'Download CSV', exact: true }).click();
   const download = await downloadPromise;
   assert.equal(download.suggestedFilename(), 'fieldwork-sentiment.csv');
+  const exportedCsv = readFileSync(await download.path(), 'utf8');
+  assert.ok(exportedCsv.split('\r\n')[0].endsWith('dataDisclosure'));
+  assert.ok(exportedCsv.includes('Synthetic demonstration data.'));
+  assert.equal(exportedCsv.split('\r\n').length, 10001);
   await page.getByLabel('Open methodology').click();
   await page.getByRole('dialog').waitFor();
   await page.keyboard.press('Escape');

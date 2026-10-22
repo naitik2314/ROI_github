@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { aggregateDays, filterRecords, meanScore, labelSentiment, recordsCsv, HEALTH_EVENTS, HEALTH_TOPICS, COUNTIES, visibleEvents, hasSentiment } from '../lib/sentiment.ts';
+import { aggregateDays, filterRecords, meanScore, labelSentiment, recordsCsv, HEALTH_EVENTS, HEALTH_TOPICS, COUNTIES, visibleEvents, hasSentiment, EXPORT_DISCLOSURE } from '../lib/sentiment.ts';
 import { calculateRoi, DEFAULT_ROI, OUTREACH_SITES, planOutreach } from '../lib/planning.ts';
 const records = JSON.parse(readFileSync(new URL('../public/data/sentiment.json', import.meta.url)));
 test('10,000 valid, uniquely identified synthetic records cover all sources and all 90 days', () => {
@@ -45,6 +45,8 @@ test('CSV preserves quoted text and exports all selected records', () => {
   const csv = recordsCsv([{ ...records[0], text: 'A "quoted", synthetic record' }]);
   assert.ok(csv.includes('"A ""quoted"", synthetic record"'));
   assert.equal(recordsCsv(records).split('\r\n').length, 10001);
+  assert.ok(csv.split('\r\n')[0].endsWith('dataDisclosure'));
+  assert.ok(csv.split('\r\n')[1].endsWith(`"${EXPORT_DISCLOSURE}"`));
 });
 
 test('source-specific fixtures never invent provider hearings or assign sentiment to search volume', () => {

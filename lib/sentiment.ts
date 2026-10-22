@@ -51,8 +51,9 @@ export function filterRecords(rows: SentimentRecord[], { days, source, county, t
   const first = start.toISOString().slice(0, 10); const search = query.trim().toLowerCase();
   return rows.filter(r => r.date >= first && r.date <= END_DATE && (source === 'all' || r.source === source) && (county === 'all' || r.county === county) && (topic === 'all' || r.topic === topic) && (!search || `${r.text} ${r.topic} ${r.county ?? ''} ${r.location} ${r.organization ?? ''}`.toLowerCase().includes(search)));
 }
+export const EXPORT_DISCLOSURE = 'Synthetic demonstration data. Posts, news outlines, hearing excerpts, search indices and sentiment scores are generated examples, not observed public reaction.';
 export function recordsCsv(rows: SentimentRecord[]) {
   const fields = ['id', 'date', 'source', 'location', 'county', 'organization', 'topic', 'text', 'score', 'synthetic', 'eventId', 'recordKind', 'sourceName', 'sourceContext', 'sessionId', 'query', 'interestIndex'] as const;
   const escape = (value: unknown) => `"${String(value ?? '').replaceAll('"', '""')}"`;
-  return [fields.join(','), ...rows.map(row => fields.map(key => escape(row[key])).join(','))].join('\r\n');
+  return [[...fields, 'dataDisclosure'].join(','), ...rows.map(row => [...fields.map(key => escape(row[key])), escape(EXPORT_DISCLOSURE)].join(','))].join('\r\n');
 }

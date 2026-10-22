@@ -24,7 +24,7 @@ function chartGeometry(points: DayPoint[], width: number, events: HealthEvent[])
     const scored = p.records.filter(hasSentiment);
     const stride = Math.max(1, Math.ceil(scored.length / 5));
     return scored.filter((_, i) => i % stride === 0).slice(0, 5);
-  }).map((record, i) => ({ record, x: Math.max(left, Math.min(right, x(record.date) + ((i % 3) - 1) * 2)), y: y(record.score), title: `${formatDate(record.date)} · ${formatScore(record.score)} · ${record.topic}. Click to read this synthetic record.` }));
+  }).map((record, i) => ({ record, x: Math.max(left, Math.min(right, x(record.date) + ((i % 3) - 1) * 2)), y: y(record.score), title: `${formatDate(record.date)} · ${formatScore(record.score)} · ${record.topic}. Click to explore this record.` }));
   const eventPoints = events.flatMap(event => { const point = plotted.find(p => p.date === event.date); return point ? [{ ...point, event, label: `${formatDate(event.date)}: ${event.label}. ${event.kind === 'reported' ? 'Reported event, simulated response' : 'Illustrative event'}.` }] : []; });
   const ticks = (mobile ? [0, 1 / 3, 2 / 3, 1] : [0, .2, .4, .6, .8, 1]).map(ratio => ({ ratio, x: left + (right - left) * ratio, label: formatDate(new Date(Date.parse(first) + duration * ratio).toISOString().slice(0, 10)) }));
   return { width, height, left, right, top, bottom, zero, mobile, plotted, samples, eventPoints, ticks, path, y };
@@ -77,7 +77,7 @@ const StaticPlot = memo(function StaticPlot({ geometry: g, showRecords, onSelect
     </defs>
     {[1, .5, 0, -.5, -1].map(value => <g key={value}><line x1={g.left} x2={g.right} y1={g.y(value)} y2={g.y(value)} className={value === 0 ? 'zero-line' : 'grid-line'} /><text x="0" y={g.y(value) + 4} className="axis-text">{value > 0 ? '+' : ''}{value.toFixed(1)}</text></g>)}
     {g.plotted.length > 1 && <path d={`${g.path} L ${g.plotted.at(-1)!.x} ${g.zero} L ${g.plotted[0].x} ${g.zero} Z`} fill="url(#sentiment-fill)" />}
-    {showRecords && g.samples.map(({ record, x, y, title }) => <circle key={record.id} cx={x} cy={y} r={g.mobile ? 1.6 : 2.2} fill={record.score > .15 ? '#779d66' : record.score < -.15 ? '#c68f7e' : '#a8ad99'} opacity=".43" className="record-dot" onClick={e => { e.stopPropagation(); onRecord(record); }}><title>{title}</title></circle>)}
+    {showRecords && g.samples.map(({ record, x, y, title }) => <circle key={record.id} data-record-id={record.id} cx={x} cy={y} r={g.mobile ? 1.6 : 2.2} fill={record.score > .15 ? '#779d66' : record.score < -.15 ? '#c68f7e' : '#a8ad99'} opacity=".6" stroke="transparent" strokeWidth="7" className="record-dot" onClick={e => { e.stopPropagation(); onRecord(record); }}><title>{title}</title></circle>)}
     <path d={g.path} fill="none" stroke="url(#sentiment-stroke)" strokeWidth="2.6" strokeLinecap="round" />
     {g.eventPoints.map(({ event, x, y, label }, index) => <g key={event.id} role="button" tabIndex={0} aria-label={label} onClick={() => onSelect(event.date)} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onSelect(event.date); } }} className="event-marker">
       <rect x={x - 10} y="3" width="20" height={g.bottom - 3} fill="transparent" />
@@ -112,7 +112,7 @@ export default memo(function SentimentChart({ points, selectedDate, onSelect, on
   const leave = useCallback(() => hoverRef.current?.clear(), []);
   if (!points.length) return <div className="empty-state">No records match these filters. Try a different source, location, or search.</div>;
   if (!hasScoredPoints) return <>
-    <div className="empty-state search-interest-notice" tabIndex={0} onKeyDown={e => { if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { e.preventDefault(); selectOffset(e.key === 'ArrowLeft' ? -1 : 1); } }}>Search interest measures attention, not sentiment. These records show a simulated 0–100 interest index in the conversation list below; they are excluded from sentiment scores and event-response curves.</div>
+    <div className="empty-state search-interest-notice" tabIndex={0} onKeyDown={e => { if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { e.preventDefault(); selectOffset(e.key === 'ArrowLeft' ? -1 : 1); } }}>Search interest measures attention, not sentiment. These records show a 0–100 interest index in the conversation list below; they are excluded from sentiment scores and event-response curves.</div>
     <div className="chart-foot"><span>Browse weekly search-interest observations.</span><div className="day-navigation"><button className="icon-button" aria-label="Previous day" disabled={selectedIndex <= 0} onClick={() => selectOffset(-1)}><ArrowLeft size={14} /></button><span>{selectedDate ? formatDate(selectedDate) : 'Select a period'}</span><button className="icon-button" aria-label="Next day" disabled={selectedIndex >= points.length - 1} onClick={() => selectOffset(1)}><ArrowRight size={14} /></button></div></div>
   </>;
   return <>
@@ -121,6 +121,6 @@ export default memo(function SentimentChart({ points, selectedDate, onSelect, on
       <StaticPlot geometry={geometry} showRecords={showRecords} onSelect={onSelect} onRecord={onRecord} onHover={hover} onLeave={leave} onKeyStep={selectOffset} />
       <HoverLayer ref={hoverRef} geometry={geometry} selectedDate={selectedDate} />
     </div>
-    <div className="chart-foot"><span>All scores and volumes are synthetic. Search-interest indices are excluded from sentiment.</span><div className="day-navigation"><button className="icon-button" aria-label="Previous day" disabled={selectedIndex <= 0} onClick={() => selectOffset(-1)}><ArrowLeft size={14} /></button><span>{selectedDate ? formatDate(selectedDate) : 'Select a day'}</span><button className="icon-button" aria-label="Next day" disabled={selectedIndex >= points.length - 1} onClick={() => selectOffset(1)}><ArrowRight size={14} /></button></div></div>
+    <div className="chart-foot"><span>Select a record dot to explore sentiment through its full text.</span><div className="day-navigation"><button className="icon-button" aria-label="Previous day" disabled={selectedIndex <= 0} onClick={() => selectOffset(-1)}><ArrowLeft size={14} /></button><span>{selectedDate ? formatDate(selectedDate) : 'Select a day'}</span><button className="icon-button" aria-label="Next day" disabled={selectedIndex >= points.length - 1} onClick={() => selectOffset(1)}><ArrowRight size={14} /></button></div></div>
   </>;
 });

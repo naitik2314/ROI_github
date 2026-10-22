@@ -309,3 +309,71 @@ body { font-size: 18px; line-height: 1.6; }
 .interest-score { color: #61765a; }
 .record-score.interest-score { min-width: 112px; }
 .search-interest-notice { border: 1px solid var(--line); background: #f0f3e8; margin-top: 24px; border-radius: 6px; font-size: 18px; padding: 30px; }
+
+/* Per-record reading experience adapted from the supplied sentiment UI. */
+.record-drawer.record-lens { width: min(960px, 100%); padding: 30px 42px; }
+.record-lens .record-lens-header { align-items: flex-start; gap: 24px; }
+.record-lens-header>div { display: block; }
+.record-lens-header h2 { font-size: 30px; margin: 8px 0 0; line-height: 1.35; }
+.record-lens-meta { display: flex; flex-wrap: wrap; justify-content: flex-start !important; align-items: center; gap: 10px; margin-top: 18px; color: #69795e; font-size: 15px; }
+.record-lens-meta i { width: 3px; height: 3px; border-radius: 50%; background: #a4b093; }
+.passage-reader { margin-top: 28px; }
+.passage-hero { text-align: center; padding: 24px 12px 30px; }
+.passage-score { font-size: 94px; font-weight: 350; letter-spacing: -5px; line-height: 1.15; margin-top: 13px; font-variant-numeric: tabular-nums; }
+.passage-score-caption { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+.passage-score-caption>span:last-child { font-family: var(--mono); font-size: 14px; color: #7a886d; }
+.passage-hero>p { font-size: 17px; color: #6f8062; line-height: 1.8; margin-top: 18px; }
+.passage-heading { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.passage-heading h3 { font-size: 18px; font-weight: 450; }
+.passage-heading>span { font-size: 14px; color: #738568; }
+.passage-graph { padding-top: 18px; }
+.passage-graph svg { width: 100%; display: block; overflow: visible; touch-action: pan-y; cursor: crosshair; }
+.passage-plot-point { cursor: pointer; }
+.passage-chart-labels { display: flex; justify-content: space-between; gap: 12px; font-family: var(--mono); font-size: 14px; color: #7b8b6d; margin: 5px 0 0 44px; }
+.passage-chart-labels span:nth-child(2) { text-align: center; font-size: 13px; }
+.passage-legend { display: flex; align-items: center; justify-content: center; gap: 13px; font-size: 14px; color: #748568; margin: 24px 0; }
+.passage-legend i { display: block; width: 130px; height: 5px; border-radius: 5px; background: linear-gradient(90deg, #b85d52, #ddbaa7, #d8dfc6, #97b678, #28764b); }
+.passage-reading { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 24px 0; }
+.passage-reading p { font-size: 21px; line-height: 2; margin: 0 0 18px; }
+.passage-reading p:last-child { margin-bottom: 0; }
+.passage-text { cursor: pointer; border-radius: 4px; padding: 3px 0; transition: background .12s; }
+.passage-text.positive { color: #2d7049; }
+.passage-text.negative { color: #a75248; }
+.passage-text.neutral { color: #6c7b5f; }
+.passage-text.active.positive { background: #e2ecd5; box-shadow: 3px 0 #e2ecd5, -3px 0 #e2ecd5; }
+.passage-text.active.negative { background: #f0e1d9; box-shadow: 3px 0 #f0e1d9, -3px 0 #f0e1d9; }
+.passage-text.active.neutral { background: #e8eddf; box-shadow: 3px 0 #e8eddf, -3px 0 #e8eddf; }
+.passage-controls { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 15px 0; }
+.passage-controls>div { display: flex; align-items: center; gap: 9px; font-family: var(--mono); font-size: 14px; color: #718462; }
+.passage-method { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; border-top: 1px solid var(--line); padding: 16px 0; font-size: 14px; color: #7b886c; }
+.passage-method strong { font-family: var(--mono); font-weight: 400; color: #596f4b; margin-left: 8px; }
+.record-provenance { margin-top: 18px; border-top: 1px solid var(--line); padding: 18px 0; }
+.record-provenance summary { cursor: pointer; font-size: 16px; color: #69845a; }
+.record-provenance .record-facts { margin-top: 24px; }
+.passage-analysis-note { font-size: 15px; line-height: 1.8; color: #6b7c60; margin-top: 16px; }
+.record-lens .drawer-event { margin-top: 12px; }
+.search-record-text { font-size: 22px; line-height: 1.85; }
+.export-modal .primary-button { margin-top: 20px; }
+@media(max-width:700px) {
+  .record-drawer.record-lens { padding: 24px 22px; }
+  .record-lens-header h2 { font-size: 26px; }
+  .record-lens-meta { font-size: 14px; }
+  .passage-score { font-size: 82px; }
+  .passage-hero { padding: 18px 0 25px; }
+  .passage-heading { display: block; }
+  .passage-heading>span { display: block; margin-top: 8px; }
+  .passage-reading p { font-size: 20px; }
+  .passage-chart-labels span:nth-child(2) { display: none; }
+  .passage-controls { gap: 12px; }
+  .passage-method { display: block; }
+  .passage-method>span { display: block; margin-bottom: 9px; }
+}
+.record-dot:hover { stroke: transparent; stroke-width: 7px; }
+.passage-hero { padding: 10px 0 20px; }
+.passage-score { font-size: 82px; margin-top: 0; }
+.passage-score-caption { margin-top: 8px; }
+.passage-hero>p { margin-top: 12px; }
+.passage-heading { padding-bottom: 12px; }
+.passage-graph { padding-top: 12px; }
+.passage-legend { margin: 15px 0; }
+.passage-reading { padding: 18px 0; }
