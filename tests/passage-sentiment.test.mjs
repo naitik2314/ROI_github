@@ -19,6 +19,10 @@ test('local sentiment handles negation and intensity without inventing readings 
   assert.ok(textSentiment('slightly worried') > textSentiment('worried'));
   assert.equal(textSentiment('The appointment is on Tuesday.'), 0);
   assert.equal(textSentiment(''), 0);
+  assert.equal(textSentiment('The care team organized staffing.'), 0);
+  assert.ok(textSentiment('I am concerned and worried.') < 0);
+  assert.ok(textSentiment('I am hoping for improvement.') > 0);
+  assert.equal(textSentiment('I would like an appointment.'), 0);
 });
 test('long text remains bounded and retains every word across paragraph boundaries', () => {
   const text = Array.from({ length: 250 }, (_, i) => `Sentence ${i} is helpful.`).join('\n\n');

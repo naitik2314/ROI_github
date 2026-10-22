@@ -3,10 +3,10 @@ export interface Passage { text: string; score: number; paragraph: number }
 const lexicon = new Map<string, number>();
 function words(weight: number, list: string) { for (const word of list.split(' ')) lexicon.set(word, weight); }
 words(3, 'amazing awesome beautiful brilliant delightful ecstatic excellent fantastic flawless grateful happiness happy incredible joyful love loved lovely magnificent outstanding perfect phenomenal superb thrilled wonderful');
-words(2, 'admire appreciate appreciated best better bright calm celebrate charming cheerful comfortable comfort confident eager enjoy enjoyed exciting excited fond friendly friends fun glad good great heal hopeful hope impressed inspiring kind laugh like liked lucky peaceful pleasant pleased positive proud recommend refreshing relief relieved safe satisfying smile strong success successful sweet thoughtful trust warm welcome win winning worth accessible affordable convenient compassionate reassuring stable');
-words(1, 'agree benefit care clear familiar fine fresh gentle improve improved improvement interesting light nice okay opportunity pretty progress promising ready simple slowly solid support useful well helpful prepared');
+words(2, 'admire appreciate appreciated best better bright calm celebrate charming cheerful comfortable comfort confident eager enjoy enjoyed exciting excited fond friendly friends fun glad good great heal hopeful hope impressed inspiring kind laugh like liked lucky peaceful pleasant pleased positive proud recommend refreshing relief relieved safe satisfying smile strong success successful sweet thoughtful trust warm welcome win winning worth accessible affordable convenient compassionate reassuring stable hoping helpful helped reassured relieved');
+words(1, 'agree benefit clear familiar fine fresh gentle improve improved improvement interesting light nice okay opportunity pretty progress promising ready simple slowly solid support useful well helpful prepared');
 words(-1, 'awkward bored boring confusing difficult doubt dull hard hesitate lonely miss missed missing nervous odd rough slow strange tired uncertain unfamiliar unsure wait worried uncertainty unclear waiting concerns concern barriers barrier limited');
-words(-2, 'afraid angry annoy annoyed awful bad broken cold complain cruel damage depressing disappointed disappointing discomfort dislike disliked dreadful fail failed failure fear frustrated frustrating grief guilt harm hate hated hurt lack lie lies loss miserable negative pain painful poor regret reject rude sad scared shame stressful struggle terrible uncomfortable unhappy unpleasant upset useless weak worse wrong burnout backlogs backlog shortages shortage delays delayed delay expensive unaffordable isolation disruption disrupted overwhelmed frightened');
+words(-2, 'afraid angry annoy annoyed awful bad broken cold complain cruel damage depressing disappointed disappointing discomfort dislike disliked dreadful fail failed failure fear frustrated frustrating grief guilt harm hate hated hurt lack lie lies loss miserable negative pain painful poor regret reject rude sad scared shame stressful struggle terrible uncomfortable unhappy unpleasant upset useless weak worse wrong burnout backlogs backlog shortages shortage delays delayed delay expensive unaffordable isolation disruption disrupted overwhelmed frightened concerned worrying frustrated stressful');
 words(-3, 'abysmal appalling atrocious catastrophic devastated disastrous disgusting horrible horrendous horrific hopeless loathe nightmare pathetic terrifying tragic unbearable worthless worst terrified');
 const negations = new Set(['not', 'no', 'never', 'neither', 'nor', 'without', 'hardly', 'barely', 'isnt', 'wasnt', 'dont', 'doesnt', 'didnt', 'cant', 'couldnt', 'wouldnt', 'shouldnt']);
 const boosters = new Set(['very', 'really', 'extremely', 'incredibly', 'absolutely', 'deeply', 'so', 'truly', 'especially']);
@@ -18,6 +18,7 @@ function rawSentiment(text: string) {
   let sum = 0, hits = 0;
   tokens.forEach((word, index) => {
     if (!lexicon.has(word)) return;
+    if (word === 'like' && ['would', 'could'].includes(tokens[index - 1])) return;
     let weight = lexicon.get(word)!;
     let prior = tokens.slice(Math.max(0, index - 3), index);
     const contrast = Math.max(prior.lastIndexOf('but'), prior.lastIndexOf('however'));

@@ -77,7 +77,7 @@ const StaticPlot = memo(function StaticPlot({ geometry: g, showRecords, onSelect
     </defs>
     {[1, .5, 0, -.5, -1].map(value => <g key={value}><line x1={g.left} x2={g.right} y1={g.y(value)} y2={g.y(value)} className={value === 0 ? 'zero-line' : 'grid-line'} /><text x="0" y={g.y(value) + 4} className="axis-text">{value > 0 ? '+' : ''}{value.toFixed(1)}</text></g>)}
     {g.plotted.length > 1 && <path d={`${g.path} L ${g.plotted.at(-1)!.x} ${g.zero} L ${g.plotted[0].x} ${g.zero} Z`} fill="url(#sentiment-fill)" />}
-    {showRecords && g.samples.map(({ record, x, y, title }) => <circle key={record.id} data-record-id={record.id} cx={x} cy={y} r={g.mobile ? 1.6 : 2.2} fill={record.score > .15 ? '#779d66' : record.score < -.15 ? '#c68f7e' : '#a8ad99'} opacity=".6" stroke="transparent" strokeWidth="7" className="record-dot" onClick={e => { e.stopPropagation(); onRecord(record); }}><title>{title}</title></circle>)}
+
     <path d={g.path} fill="none" stroke="url(#sentiment-stroke)" strokeWidth="2.6" strokeLinecap="round" />
     {g.eventPoints.map(({ event, x, y, label }, index) => <g key={event.id} role="button" tabIndex={0} aria-label={label} onClick={() => onSelect(event.date)} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onSelect(event.date); } }} className="event-marker">
       <rect x={x - 10} y="3" width="20" height={g.bottom - 3} fill="transparent" />
@@ -88,6 +88,7 @@ const StaticPlot = memo(function StaticPlot({ geometry: g, showRecords, onSelect
       <title>{event.label} · {event.kind === 'reported' ? 'Reported / simulated response' : 'Illustrative'}</title>
     </g>)}
     {g.plotted.map(p => <circle key={p.date} cx={p.x} cy={p.y} r="8" fill="transparent" className="day-target" onClick={() => onSelect(p.date)}><title>{`${p.dateLabel}: ${p.scoreLabel}, ${p.countLabel}`}</title></circle>)}
+    {showRecords && g.samples.map(({ record, x, y, title }) => <circle key={record.id} data-record-id={record.id} cx={x} cy={y} r={g.mobile ? 1.6 : 2.2} fill={record.score > .15 ? '#779d66' : record.score < -.15 ? '#c68f7e' : '#a8ad99'} opacity=".6" stroke="transparent" strokeWidth="7" className="record-dot" onClick={e => { e.stopPropagation(); onRecord(record); }}><title>{title}</title></circle>)}
     {g.ticks.map(tick => <text key={tick.ratio} x={tick.x} y={g.height - 5} textAnchor={tick.ratio === 0 ? 'start' : tick.ratio === 1 ? 'end' : 'middle'} className="axis-text">{tick.label}</text>)}
   </svg>;
 });

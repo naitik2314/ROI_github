@@ -32,6 +32,7 @@ try {
   assert.ok(dot, 'At least one individual record dot must be directly clickable');
   await page.mouse.click(dot.x, dot.y);
   await page.getByRole('slider', { name: 'Passage sentiment journey' }).waitFor();
+  assert.equal(await page.locator('.passage-score').innerText(), await page.locator('.passage-method strong').innerText(), 'Full paragraph must retain the clicked timeline score');
   await page.locator('.record-lens').screenshot({ path: '/private/tmp/fieldwork-passage-reader.png' });
   await page.getByText('Source details & methodology', { exact: true }).click();
   assert.ok((await page.locator('.record-facts').innerText()).includes(dot.id));
@@ -48,6 +49,7 @@ try {
   await page.locator('.record-lens').screenshot({ path: '/private/tmp/fieldwork-passage-mobile.png' });
   await page.setViewportSize({ width: 1512, height: 1100 });
   assert.equal(await page.locator('.passage-text.active').count(), 0);
+  assert.equal(await page.locator('.passage-score').innerText(), await page.locator('.passage-method strong').innerText());
   await page.getByLabel('Close selected record').click();
 
 
@@ -102,7 +104,7 @@ try {
   const beforeDay = await page.locator('.context-date').innerText();
   await page.getByRole('button', { name: 'Previous day', exact: true }).click();
   assert.notEqual(await page.locator('.context-date').innerText(), beforeDay);
-  await page.getByRole('button', { name: 'Oct 11: Corewell ER staffing. Reported event, simulated response.', exact: true }).click();
+  await page.getByRole('button', { name: 'Oct 11: Corewell ER staffing. Reported event, simulated response.', exact: true }).locator('text').click();
   assert.equal(await page.locator('.context-date').innerText(), 'Oct 11');
   await page.locator('.sentiment-chart').focus();
   await page.keyboard.press('ArrowRight');
@@ -113,14 +115,16 @@ try {
   await page.locator('.record-card').first().click();
   await page.locator('.selected-record').waitFor();
   await page.getByRole('slider', { name: 'Passage sentiment journey' }).waitFor();
+  await page.locator('.passage-text').first().click();
+  await page.locator('.record-lens').screenshot({ path: '/private/tmp/fieldwork-passage-selected.png' });
   await page.getByRole('link', { name: 'Read source report', exact: true }).focus();
   await page.keyboard.press('Tab');
   assert.equal(await page.evaluate(() => document.activeElement.getAttribute('aria-label')), 'Close selected record');
   await page.getByLabel('Close selected record').click();
-  await page.getByRole('button', { name: /Aug 9: Air quality advisory/ }).click();
+  await page.getByRole('button', { name: /Aug 9: Air quality advisory/ }).locator('text').click();
   assert.ok((await page.locator('.context-panel').innerText()).includes('HEALTH EVENT'));
   assert.ok(!(await page.locator('.context-panel').innerText()).includes('Corewell'));
-  await page.getByRole('button', { name: /Sep 12: Mental health access/ }).click();
+  await page.getByRole('button', { name: /Sep 12: Mental health access/ }).locator('text').click();
   assert.ok((await page.locator('.context-panel').innerText()).includes('mental health'));
 
   const downloadPromise = page.waitForEvent('download');
