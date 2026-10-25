@@ -15,8 +15,10 @@ Open the printed localhost URL. For production: `npm run build`, then `npm start
 
 ## Workspace
 
+Exports are temporarily disabled for sentiment CSV, ROI scenario JSON, and MHU plan CSV. Controls display **Unavailable**. Set `EXPORTS_ENABLED` in `lib/features.ts` to restore the existing export workflows.
+
 - **Sentiment analysis:** 10,000 synthetic records, source, county, and health-topic filters, 30/60/90-day windows, keyword search, daily averages, clickable record dots, keyboard day selection, event context, and CSV export of the current selection. Select a record dot or a row to open its text reader. The reader adapts the supplied sentiment UI: a changing passage score, an emotional-arc graph, and the full paragraph with sentiment-colored passages. Hover to explore; click to pin a passage; arrow keys, Home/End, and the full-paragraph control provide keyboard navigation. The date range is a fixed snapshot ending October 20, 2026, rather than a live feed.
-- **ROI calculator:** editable workforce size, annual cost per employee, participation, cost reduction, and annual investment. Results update locally; export the assumptions and results as JSON. Net ROI is `(gross savings − investment) / investment`; benefit/cost is `gross savings / investment`. Undefined ratios display N/A. Defaults are illustrative assumptions, not predictions or clinical evidence.
+- **ROI calculator:** editable workforce size, annual cost per employee, participation, cost reduction, and annual investment. Results update locally; the retained export format contains assumptions and results as JSON. Net ROI is `(gross savings − investment) / investment`; benefit/cost is `gross savings / investment`. Undefined ratios display N/A. Defaults are illustrative assumptions, not predictions or clinical evidence.
 - **MHU scheduler:** adjustable unit count and daily screening capacity; five-day planning heuristic, explicit site demand, remaining demand and utilization, and CSV export. Full-capacity visits are preferred, then sites are ranked by priority. At most one unit visits a site each day. Travel time and clinician availability are not modeled. This is a capacity-planning demonstration, not a globally optimal routing solver.
 
 The original optional NextAuth login route remains at `/login`; its Google and credentials providers require the environment variables in `.env.example`. Only `/account/*` is protected by the existing auth middleware. The demo dashboard and its synthetic fixtures are public to anyone who can reach this local server. No production identity or data-access controls are claimed.
@@ -62,7 +64,7 @@ Optional browser checks:
 PLAYWRIGHT_MODULE=/absolute/path/to/playwright BASE_URL=http://127.0.0.1:3012 npm run test:ui
 ```
 
-Start the dev server on that port first. The UI checker uses an existing Playwright installation (the default points to the Codex bundled runtime on the development machine). It checks search, filters, record/day selection, exports, methodology, ROI and scheduler updates, hearing/source isolation, unscored search-interest drawers, hover isolation, and horizontal overflow at 390/768/1024/1512 pixels. Screenshots are written to the OS temporary directory used by the development environment.
+Start the dev server on that port first. The UI checker uses an existing Playwright installation (the default points to the Codex bundled runtime on the development machine). It checks search, filters, record/day selection, disabled export controls, methodology, ROI and scheduler updates, hearing/source isolation, unscored search-interest drawers, hover isolation, and horizontal overflow at 390/768/1024/1512 pixels. Screenshots are written to the OS temporary directory used by the development environment.
 
 ## Graph performance
 
@@ -72,6 +74,6 @@ Run the **production** build for representative performance (`npm run build`, th
 
 ## Presentation and record reading
 
-The presentation view omits repeated synthetic-data banners and per-record badges. Source-specific fixture rules are preserved; record metadata is available in a collapsed **Source details & methodology** section, and the workspace methodology still explains the data. The **Export data** action opens a demonstration-data disclosure before downloading. The CSV preserves `synthetic`, `sourceContext`, and all original record fields, and adds `dataDisclosure` to every row so the exported file remains self-describing.
+The presentation view omits repeated synthetic-data banners and per-record badges. Source-specific fixture rules are preserved; record metadata is available in a collapsed **Source details & methodology** section, and the workspace methodology still explains the data. When exports are enabled, the **Export data** action opens a demonstration-data disclosure before downloading. The CSV preserves `synthetic`, `sourceContext`, and all original record fields, and adds `dataDisclosure` to every row so the exported file remains self-describing.
 
 The per-record reader is loaded only when a record is opened, preserving the main graph's cached hover path. Its sentence/clause scores come from deterministic local text analysis, adapted from the supplied index.html reference. Negation, intensity, and neutral text are handled without an LLM or network call. The full-paragraph view and displayed **Timeline score** retain the clicked record's assigned fixture value. Selecting a passage changes the large score to a separate local reading of the actual text and do not change the aggregate dataset. Search-interest records keep their separate index view and are not assigned passage sentiment.

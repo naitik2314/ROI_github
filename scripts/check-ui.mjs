@@ -1,11 +1,11 @@
 import { createRequire } from 'node:module';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
 const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || '/Users/ho9307/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 const browser = await chromium.launch({ headless: true });
 try {
   const page = await browser.newPage({ viewport: { width: 1512, height: 1100 }, deviceScaleFactor: 1 });
+  const downloads = []; page.on('download', download => downloads.push(download.suggestedFilename()));
   const errors = []; page.on('pageerror', error => errors.push(error.message));
   await page.goto(process.env.BASE_URL || 'http://127.0.0.1:3012');
   await page.locator('.overview-metrics strong').first().filter({ hasText: '10,000' }).waitFor();
@@ -127,23 +127,14 @@ try {
   await page.getByRole('button', { name: /Sep 12: Mental health access/ }).locator('text').click();
   assert.ok((await page.locator('.context-panel').innerText()).includes('mental health'));
 
-  const downloadPromise = page.waitForEvent('download');
-  await page.getByRole('button', { name: /Export data/ }).click();
-  await page.getByRole('dialog', { name: 'About this demonstration data' }).waitFor();
-  assert.ok((await page.locator('.export-modal').innerText()).includes('Synthetic demonstration data'));
-  await page.locator('.export-modal').screenshot({ path: '/private/tmp/fieldwork-export-disclosure.png' });
-  await page.getByRole('button', { name: 'Download CSV', exact: true }).click();
-  const download = await downloadPromise;
-  assert.equal(download.suggestedFilename(), 'fieldwork-sentiment.csv');
-  const exportedCsv = readFileSync(await download.path(), 'utf8');
-  assert.ok(exportedCsv.split('\r\n')[0].endsWith('dataDisclosure'));
-  assert.ok(exportedCsv.includes('Synthetic demonstration data.'));
-  assert.equal(exportedCsv.split('\r\n').length, 10001);
+  assert.ok(await page.getByRole('button', { name: /Export data.*Unavailable/ }).isDisabled());
+  assert.equal(await page.locator('.export-modal').count(), 0);
   await page.getByLabel('Open methodology').click();
   await page.getByRole('dialog').waitFor();
   await page.keyboard.press('Escape');
   await page.getByRole('button', { name: 'ROI calculator', exact: true }).click();
   assert.equal(await page.locator('.result-value').innerText(), '$660,000');
+  assert.ok(await page.getByRole('button', { name: /Export scenario.*Unavailable/ }).isDisabled());
   await page.locator('input[type=number]').first().fill('10000');
   assert.equal(await page.locator('.result-value').innerText(), '$1,570,000');
   await page.getByRole('button', { name: 'Reset assumptions' }).click();
@@ -151,6 +142,7 @@ try {
   await page.screenshot({ path: '/private/tmp/fieldwork-roi.png', fullPage: true });
   await page.getByRole('button', { name: 'MHU scheduler', exact: true }).click();
   assert.equal(await page.locator('.scheduler-metrics strong').first().innerText(), '300');
+  assert.ok(await page.getByRole('button', { name: /Export plan.*Unavailable/ }).isDisabled());
   await page.locator('.scheduler-settings select').first().selectOption('4');
   assert.equal(await page.locator('.scheduler-metrics strong').first().innerText(), '590');
   await page.screenshot({ path: '/private/tmp/fieldwork-scheduler.png', fullPage: true });
@@ -161,6 +153,7 @@ try {
     assert.ok(await page.evaluate(() => { const range = document.createRange(); range.selectNodeContents(document.querySelector('.score-value')); const score = range.getBoundingClientRect(), context = document.querySelector('.overview-story').getBoundingClientRect(); return score.right < context.left || score.bottom <= context.top; }), `Score overlaps context at ${width}px`);
     if (width === 390) await page.screenshot({ path: '/private/tmp/fieldwork-mobile.png', fullPage: true });
   }
+  assert.deepEqual(downloads, []);
   assert.deepEqual(errors, []);
-  console.log('Browser checks passed: filters, search, point selection, record details, CSV export, methodology, ROI, scheduler, and four responsive widths. No page errors.');
+  console.log('Browser checks passed: filters, search, point selection, record details, disabled exports, methodology, ROI, scheduler, and four responsive widths. No page errors.');
 } finally { await browser.close(); }
