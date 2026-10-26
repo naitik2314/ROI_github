@@ -1,4 +1,6 @@
 export type InputStatus = 'OFFICIAL DATA' | 'LITERATURE-DERIVED' | 'USER ASSUMPTION' | 'MODELED' | 'OBSERVED' | 'UNVERIFIED';
+export interface WorkspaceStorage { mode: 'local' | 'temporary'; label: string; notice: string | null }
+export interface WorkspaceHealth { snapshots: number; observations: number; foreignKeys: unknown[]; storage: WorkspaceStorage }
 export type EffectMeasure = 'risk_ratio' | 'odds_ratio' | 'hazard_ratio' | 'rate_ratio' | 'risk_difference' | 'percentage_points' | 'mean_difference' | 'standardized_mean_difference' | 'rate_difference' | 'time_to_event';
 export type Distribution = { kind: 'fixed' } | { kind: 'normal'; sd: number } | { kind: 'lognormal'; sd: number } | { kind: 'beta'; alpha: number; beta: number } | { kind: 'gamma'; shape: number; scale: number } | { kind: 'triangular'; low: number; mode: number; high: number };
 export interface Citation { id: string; title: string; url: string; publisher: string; retrievedAt: string; year: number | null; version: string; license: string; cutoff: string | null }

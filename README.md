@@ -21,6 +21,12 @@ Run `npm run interventions:rebuild-models` to populate six reproducible planning
 
 The requested [40-point delivery report](INTERVENTION_SIMULATOR_REPORT.md) records implemented capabilities, validation results and remaining scientific/data boundaries.
 
+### Vercel deployment
+
+Use the Node.js runtime (Node 24 recommended). On Vercel, the intervention workspace automatically uses writable `/tmp` storage instead of the read-only application directory; no `FIELDWORK_DB_PATH` setting is needed. Remove an existing override pointing into `/var/task` or the project directory, then redeploy the updated code.
+
+Discovery and simulations work with the committed evidence/county snapshots. The UI labels server saves as **temporary**: versions, research history and monitoring records may disappear or be unavailable on another function instance. Permanent shared storage requires an external database; moving a SQLite file to `/tmp` does not provide persistence. See [Vercel's storage explanation](https://vercel.com/kb/guide/is-sqlite-supported-in-vercel).
+
 ## Workspace
 
 Exports are temporarily disabled for sentiment CSV, ROI scenario JSON, and MHU plan CSV. Controls display **Unavailable**. Set `EXPORTS_ENABLED` in `lib/features.ts` to restore the existing export workflows.

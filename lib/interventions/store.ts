@@ -1,14 +1,15 @@
 import { DatabaseSync } from 'node:sqlite';
 import { mkdirSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { dirname } from 'node:path';
 import { createHash, randomUUID } from 'node:crypto';
+import { storageConfig } from './storage.ts';
 import type { Library, LocalData, ModelResult, ObservedPeriod, ResearchRun, SavedScenario, Scenario, SimulationSummary } from './types.ts';
 
 let opened: { path: string; db: DatabaseSync } | null = null;
 export function database() {
-  const path = process.env.FIELDWORK_DB_PATH || join(process.cwd(), '.fieldwork', 'interventions.sqlite');
+  const { path } = storageConfig();
   if (opened?.path === path) return opened.db;
-  if (opened) opened.db.close();
+  if (opened) { opened.db.close(); opened = null; }
   mkdirSync(dirname(path), { recursive: true, mode: 0o700 });
   const db = new DatabaseSync(path);
   db.exec(`PRAGMA journal_mode=WAL; PRAGMA foreign_keys=ON; PRAGMA busy_timeout=5000;
@@ -91,4 +92,4 @@ export function addObservation(snapshotId: string, input: Omit<ObservedPeriod, '
 export function storeResearch(run: ResearchRun) { database().prepare('INSERT INTO research_runs VALUES(?,?,?,?,?)').run(run.id, run.interventionId, run.searchedAt, run.status, JSON.stringify(run)); audit('research.' + run.status, { id: run.id, interventionId: run.interventionId, candidates: run.candidates.length }); }
 export function researchRuns() { return database().prepare('SELECT content FROM research_runs ORDER BY searched_at DESC LIMIT 40').all().map(row => JSON.parse(String(row.content)) as ResearchRun); }
 export function getResearchRun(id: string) { const row = database().prepare('SELECT content FROM research_runs WHERE id=?').get(id); return row ? JSON.parse(String(row.content)) as ResearchRun : null; }
-export function integrityReport() { return { quickCheck: database().prepare('PRAGMA quick_check').all(), foreignKeys: database().prepare('PRAGMA foreign_key_check').all(), snapshots: Number(database().prepare('SELECT COUNT(*) AS n FROM scenario_versions').get()!.n), observations: Number(database().prepare('SELECT COUNT(*) AS n FROM observations').get()!.n), audit: database().prepare('SELECT event,created_at,content FROM audit_events ORDER BY id DESC LIMIT 30').all() }; }
+export function integrityReport() { return { storage: storageConfig().status, quickCheck: database().prepare('PRAGMA quick_check').all(), foreignKeys: database().prepare('PRAGMA foreign_key_check').all(), snapshots: Number(database().prepare('SELECT COUNT(*) AS n FROM scenario_versions').get()!.n), observations: Number(database().prepare('SELECT COUNT(*) AS n FROM observations').get()!.n), audit: database().prepare('SELECT event,created_at,content FROM audit_events ORDER BY id DESC LIMIT 30').all() }; }

@@ -11,3 +11,5 @@
 .uncertainty-probabilities{flex-wrap:wrap}.uncertainty-probabilities>div{min-width:130px}.simulation-scatter{border-top:1px solid var(--studio-line);padding-top:23px;margin-top:25px}.studio-inline-fields{flex-wrap:wrap}
 
 .input-provenance{display:flex;gap:8px 15px;flex-wrap:wrap;align-items:center;border-top:1px solid var(--studio-line);padding:13px 0 20px;font-size:13px;color:#607757}.input-provenance>span{font:12px var(--mono);letter-spacing:.6px}.input-provenance button{text-decoration:underline;font-size:14px}.input-provenance>small{display:block;width:100%;color:#748568;font-size:14px}.incremental-workspace{border-top:1px solid var(--studio-line);padding-top:25px;margin-top:25px}.incremental-workspace>p{margin-top:12px}.incremental-workspace>.studio-field{margin-top:18px;max-width:480px}
+
+.impact-studio .studio-storage-notice{display:flex;align-items:flex-start;gap:10px;margin:12px 0;padding:12px 16px;border:1px solid #d7dfcb;background:#eef1e8;color:#465a42;font-size:14px;line-height:1.6}.impact-studio .studio-storage-notice svg{flex-shrink:0;margin-top:3px}

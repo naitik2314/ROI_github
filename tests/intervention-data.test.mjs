@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { library, local } from '../lib/interventions/catalog.ts';
 import { createScenario } from '../lib/interventions/scenario.ts';
 import { modelScenario } from '../lib/interventions/model.ts';
@@ -11,6 +12,37 @@ import { scenarioCsv } from '../lib/interventions/exports.ts';
 import { extractCandidates, deduplicateResearch, researchIntervention } from '../lib/interventions/research.ts';
 import { evaluateDid } from '../lib/interventions/evaluation.ts';
 import { readBody } from '../lib/interventions/http.ts';
+import { storageConfig, TEMPORARY_STORAGE_NOTICE } from '../lib/interventions/storage.ts';
+
+test('storage keeps the local database and explicit overrides while selecting writable scratch space on Vercel',()=>{
+ const localConfig=storageConfig({},'/workspace','/scratch');
+ assert.equal(localConfig.path,'/workspace/.fieldwork/interventions.sqlite');assert.equal(localConfig.status.mode,'local');assert.equal(localConfig.status.notice,null);
+ for(const [env,cwd] of [[{VERCEL:'1'},'/workspace'],[{VERCEL_ENV:'production'},'/workspace'],[{},'/var/task']]){
+  const cloud=storageConfig(env,cwd,'/scratch');assert.equal(cloud.path,'/scratch/.fieldwork/interventions.sqlite');assert.equal(cloud.status.mode,'temporary');assert.equal(cloud.status.notice,TEMPORARY_STORAGE_NOTICE);
+ }
+ const override=storageConfig({VERCEL:'1',FIELDWORK_DB_PATH:'/scratch/custom.sqlite'},'/var/task','/scratch');
+ assert.equal(override.path,'/scratch/custom.sqlite');assert.equal(override.status.mode,'temporary');
+});
+test('Vercel startup, simulation audit and temporary saves work without writing to the application directory',()=>{
+ const dir=mkdtempSync(join(tmpdir(),'fieldwork-vercel-test-'));
+ const moduleUrl=new URL('../lib/interventions/store.ts',import.meta.url).href;
+ const catalogUrl=new URL('../lib/interventions/catalog.ts',import.meta.url).href;
+ const scenarioUrl=new URL('../lib/interventions/scenario.ts',import.meta.url).href;
+ const modelUrl=new URL('../lib/interventions/model.ts',import.meta.url).href;
+ try{
+  const output=execFileSync(process.execPath,['--input-type=module','-e',`
+   import {integrityReport,researchRuns,listScenarios,saveScenario,audit,closeDatabase} from ${JSON.stringify(moduleUrl)};
+   import {library,local} from ${JSON.stringify(catalogUrl)};
+   import {createScenario} from ${JSON.stringify(scenarioUrl)};
+   import {modelScenario} from ${JSON.stringify(modelUrl)};
+   const initial=integrityReport(); const scenario=createScenario(library.interventions[0],library,local);
+   const result=modelScenario(scenario,library,local); audit('simulation.completed',{model:result.modelVersion});
+   const saved=saveScenario(scenario,result,null,library,local); closeDatabase();
+   console.log(JSON.stringify({initial,runs:researchRuns().length,savedId:saved.id,versions:listScenarios().length,health:integrityReport()})); closeDatabase();
+  `],{cwd:'/',env:{...process.env,VERCEL:'1',FIELDWORK_DB_PATH:'',TMPDIR:dir,TMP:dir,TEMP:dir},encoding:'utf8'});
+  const data=JSON.parse(output);assert.equal(data.initial.storage.mode,'temporary');assert.equal(data.initial.snapshots,0);assert.equal(data.runs,0);assert.equal(data.versions,1);assert.ok(data.savedId);assert.equal(data.health.quickCheck[0].quick_check,'ok');assert.deepEqual(data.health.foreignKeys,[]);
+ }finally{rmSync(dir,{recursive:true,force:true});}
+});
 
 test('evidence/library provenance, review grouping, currencies, units and original price years are complete',()=>{
  assert.equal(library.interventions.length,20); assert.equal(library.effects.length,20); assert.equal(library.economics.length,14);
