@@ -1,0 +1,131 @@
+{
+  "generatedAt": "2026-10-26T18:46:08.269Z",
+  "scenarios": [
+    {
+      "intervention": "crc-navigation",
+      "county": "Wayne",
+      "horizon": 3,
+      "evidenceVersion": "evidence-2026-10-26.2",
+      "dataVersion": "places-2025-mi-7f92111ebaf6",
+      "seed": 20261026,
+      "reached": 5360,
+      "outcomes": 590.4000000000001,
+      "unit": "people",
+      "financialCost": 808560.12,
+      "roi": null,
+      "interval": {
+        "mean": 596.2260401382699,
+        "median": 590.1936340866237,
+        "low": 361.55896956874795,
+        "high": 874.4010697528777
+      },
+      "durationMs": 81,
+      "readiness": "NEEDS LOCAL PILOT"
+    },
+    {
+      "intervention": "diabetes-prevention",
+      "county": "Oakland",
+      "horizon": 5,
+      "evidenceVersion": "evidence-2026-10-26.2",
+      "dataVersion": "places-2025-mi-7f92111ebaf6",
+      "seed": 20261026,
+      "reached": 9200,
+      "outcomes": 295.20000000000005,
+      "unit": "cases",
+      "financialCost": 1351600.2,
+      "roi": null,
+      "interval": {
+        "mean": 294.40476545147243,
+        "median": 295.2445102050887,
+        "low": 235.97762515619112,
+        "high": 346.1238417718429
+      },
+      "durationMs": 94,
+      "readiness": "NEEDS LOCAL PILOT"
+    },
+    {
+      "intervention": "collaborative-depression",
+      "county": "Genesee",
+      "horizon": 3,
+      "evidenceVersion": "evidence-2026-10-26.2",
+      "dataVersion": "places-2025-mi-7f92111ebaf6",
+      "seed": 20261026,
+      "reached": 2680,
+      "outcomes": 255.36000000000007,
+      "unit": "people",
+      "financialCost": 877160.12,
+      "roi": null,
+      "interval": {
+        "mean": 256.0382398241974,
+        "median": 255.29201020637873,
+        "low": 175.67784683262335,
+        "high": 343.54349420199037
+      },
+      "durationMs": 54,
+      "readiness": "NEEDS LOCAL PILOT"
+    },
+    {
+      "intervention": "asthma-home",
+      "county": "Kent",
+      "horizon": 3,
+      "evidenceVersion": "evidence-2026-10-26.2",
+      "dataVersion": "places-2025-mi-7f92111ebaf6",
+      "seed": 20261026,
+      "reached": 1105.272,
+      "outcomes": 23210.712,
+      "unit": "symptom-free days",
+      "financialCost": 719687.32,
+      "roi": null,
+      "interval": {
+        "mean": 23210.712000004212,
+        "median": 23210.712,
+        "low": 23210.712,
+        "high": 23210.712
+      },
+      "durationMs": 67,
+      "readiness": "NEEDS LOCAL PILOT"
+    },
+    {
+      "intervention": "crc-navigation",
+      "county": "Oakland",
+      "horizon": 3,
+      "evidenceVersion": "evidence-2026-10-26.2",
+      "dataVersion": "places-2025-mi-7f92111ebaf6",
+      "seed": 20261026,
+      "reached": 5360,
+      "outcomes": 590.4000000000001,
+      "unit": "people",
+      "financialCost": 808560.12,
+      "roi": null,
+      "interval": {
+        "mean": 596.2260401382699,
+        "median": 590.1936340866237,
+        "low": 361.55896956874795,
+        "high": 874.4010697528777
+      },
+      "durationMs": 66,
+      "readiness": "NEEDS LOCAL PILOT"
+    },
+    {
+      "intervention": "crc-navigation",
+      "county": "Macomb",
+      "horizon": 3,
+      "evidenceVersion": "evidence-2026-10-26.2",
+      "dataVersion": "places-2025-mi-7f92111ebaf6",
+      "seed": 20261026,
+      "reached": 5360,
+      "outcomes": 590.4000000000001,
+      "unit": "people",
+      "financialCost": 808560.12,
+      "roi": null,
+      "interval": {
+        "mean": 596.2260401382699,
+        "median": 590.1936340866237,
+        "low": 361.55896956874795,
+        "high": 874.4010697528777
+      },
+      "durationMs": 54,
+      "readiness": "NEEDS LOCAL PILOT"
+    }
+  ]
+}

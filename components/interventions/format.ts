@@ -1,0 +1,3 @@
+export const number = (value: number | null, digits = 0) => value === null || !Number.isFinite(value) ? '—' : new Intl.NumberFormat('en-US', { maximumFractionDigits: digits }).format(value);
+export const usd = (value: number | null, compact = false) => value === null || !Number.isFinite(value) ? 'Not valued' : new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: compact && Math.abs(value) >= 100000 ? 'compact' : 'standard', maximumFractionDigits: 0 }).format(value);
+export const percent = (value: number | null, digits = 0) => value === null || !Number.isFinite(value) ? '—' : `${number(value * 100, digits)}%`;

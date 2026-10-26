@@ -1,7 +1,7 @@
 
 import { auth } from "@/auth"
 
-export default auth((req) => {
+export default auth(() => {
     // straightforward logic: if not authenticated and trying to access protected route, redirect to login
     // For now, we might want to keep the landing page public.
     // The 'authorized' callback in auth.ts handles the logic.

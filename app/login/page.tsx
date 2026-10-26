@@ -21,7 +21,7 @@ export default function LoginPage() {
         e.preventDefault();
         setIsLoading(true);
         // Redirect false to handle errors manually if needed, or let it redirect
-        const result = await signIn("credentials", {
+        await signIn("credentials", {
             email,
             password,
             callbackUrl: "/",

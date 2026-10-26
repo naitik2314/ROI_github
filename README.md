@@ -1,6 +1,6 @@
 # Fieldwork — healthcare intelligence
 
-A local Next.js 16 / React 19 workspace redesigned from the supplied hand-drawn flow and the paper-and-green sentiment UI. The main workspace runs without login, external data services, language models, or API keys.
+A local Next.js 16 / React 19 workspace redesigned from the supplied hand-drawn flow and the paper-and-green sentiment UI. The main workspace runs without login, language models, or API keys. Evidence and local-data refreshes use separate public-source connectors.
 
 ## Run
 
@@ -12,6 +12,14 @@ npm run dev
 ```
 
 Open the printed localhost URL. For production: `npm run build`, then `npm start`.
+
+## Intervention studio
+
+Fieldwork now includes an evidence-informed intervention workflow: Discover → Simulate → Compare → Implement → Measure. Open **Intervention studio** in the sidebar, or click **Model interventions** from a filtered sentiment signal. It includes a reviewed 20-archetype library, 83-county Michigan calibration, capacity/reach and economic models, seeded uncertainty, immutable saved versions, comparison/portfolio tools, and implementation monitoring.
+
+Run `npm run interventions:rebuild-models` to populate six reproducible planning scenarios. See [INTERVENTION_SIMULATOR.md](INTERVENTION_SIMULATOR.md) for architecture, methods, limits, source counts and all refresh/test commands; [INTERVENTION_SIMULATOR_RESEARCH.md](INTERVENTION_SIMULATOR_RESEARCH.md) records the pre-implementation research. Modeling needs no LLM or external key. Optional ACS refresh requires a Census API key.
+
+The requested [40-point delivery report](INTERVENTION_SIMULATOR_REPORT.md) records implemented capabilities, validation results and remaining scientific/data boundaries.
 
 ## Workspace
 

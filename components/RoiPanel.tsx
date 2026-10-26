@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { LucideIcon } from "lucide-react";
 import { DollarSign, TrendingUp, Users, ShieldCheck } from "lucide-react";
 
 interface RoiAnalysisData {
@@ -15,7 +16,7 @@ interface RoiAnalysisData {
     }[];
 }
 
-const StatCard = ({ title, value, subtext, icon: Icon, colorClass, delay }: any) => (
+const StatCard = ({ title, value, subtext, icon: Icon, colorClass, delay }: { title: string; value: string; subtext?: string; icon: LucideIcon; colorClass: string; delay: number }) => (
     <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}

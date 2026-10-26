@@ -1,9 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Search, ArrowRight, Loader2 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import clsx from "clsx";
+import { Search } from "lucide-react";
 import ModernLoader from "./ModernLoader";
 
 interface CompanySearchProps {
@@ -13,7 +11,7 @@ interface CompanySearchProps {
 export default function CompanySearch({ onSearch }: CompanySearchProps) {
     const [query, setQuery] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-    const [isFocused, setIsFocused] = useState(false);
+    const [, setIsFocused] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
 
     const handleSearch = async (term?: string) => {

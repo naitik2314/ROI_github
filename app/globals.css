@@ -377,3 +377,8 @@ body { font-size: 18px; line-height: 1.6; }
 .passage-graph { padding-top: 12px; }
 .passage-legend { margin: 15px 0; }
 .passage-reading { padding: 18px 0; }
+
+/* Sentiment-to-intervention entry remains styled before the studio is loaded. */
+.model-entry-button{margin:20px 0 5px;display:flex;align-items:center;gap:10px;border:1px solid #bccfae;background:#e7efdc;padding:12px 16px;border-radius:5px;color:#365c36;font-size:16px}.sidebar .nav-item{white-space:normal}
+
+@media(max-width:700px){.sidebar nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}.sidebar .nav-item{flex-direction:row;justify-content:flex-start;text-align:left;min-height:55px;padding:10px;font-size:16px;gap:9px}}

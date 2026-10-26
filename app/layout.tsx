@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
     title: "Fieldwork — Healthcare intelligence",
-    description: "Explore healthcare sentiment, model prevention ROI, and plan mobile health outreach. An interactive workspace with clearly labeled synthetic data.",
+    description: "Explore community health sentiment, assess intervention evidence, model local impact and economic value, and plan health outreach.",
 };
 
 export default function RootLayout({

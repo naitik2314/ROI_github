@@ -1,0 +1,20 @@
+{
+  "measuredAt": "2026-10-26T18:42:53.714Z",
+  "environment": "Local production Next.js, Chromium, 1680×1050; timings are machine-specific.",
+  "sentimentStartupCatalogRequests": 0,
+  "previewSimulationRequests": 0,
+  "preview": {
+    "edits": 32,
+    "automationToTwoFramesP95Ms": 23.8,
+    "longTaskCount": 0,
+    "longestTaskMs": 0
+  },
+  "simulation": {
+    "draws": 10000,
+    "serverDurationMs": 71,
+    "firstHttpMs": 84.7,
+    "cachedHttpMs": 2.4,
+    "cacheConfirmed": true,
+    "responseBytes": 16556
+  }
+}
