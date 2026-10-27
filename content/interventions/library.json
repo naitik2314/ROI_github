@@ -1,0 +1,2853 @@
+{
+  "version": "evidence-2026-10-26.2",
+  "cutoff": "2026-10-26",
+  "sources": [
+    {
+      "id": "cpstf-crc-navigation",
+      "title": "CPSTF: Colorectal screening navigation",
+      "url": "https://www.thecommunityguide.org/findings/cancer-screening-patient-navigation-services-to-increase-colorectal-cancer-screening.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2021-11"
+    },
+    {
+      "id": "cpstf-breast-navigation",
+      "title": "CPSTF: Breast screening navigation",
+      "url": "https://www.thecommunityguide.org/findings/cancer-screening-patient-navigation-services-to-increase-breast-cancer-screening.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2021-11"
+    },
+    {
+      "id": "cpstf-cervical-navigation",
+      "title": "CPSTF: Cervical screening navigation",
+      "url": "https://www.thecommunityguide.org/findings/cancer-screening-patient-navigation-services-to-increase-cervical-cancer-screening.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2021-11"
+    },
+    {
+      "id": "cpstf-diabetes-prevention",
+      "title": "CPSTF: Community diabetes prevention",
+      "url": "https://www.thecommunityguide.org/findings/diabetes-combined-diet-and-physical-activity-promotion-programs-prevent-type-2-diabetes.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2015-02"
+    },
+    {
+      "id": "cpstf-diabetes-rationale",
+      "title": "CPSTF diabetes prevention: finding and rationale",
+      "url": "https://stacks.cdc.gov/view/cdc/164198/cdc_164198_DS1.pdf",
+      "publisher": "CPSTF / CDC Stacks",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "Finding and rationale",
+      "license": "Attribute CPSTF; public federal repository.",
+      "cutoff": "2015-02"
+    },
+    {
+      "id": "cpstf-team-bp",
+      "title": "CPSTF: Team-based blood pressure care",
+      "url": "https://www.thecommunityguide.org/findings/heart-disease-stroke-prevention-team-based-care-improve-blood-pressure-control.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2020-06"
+    },
+    {
+      "id": "cpstf-supported-smbp",
+      "title": "CPSTF: Home BP monitoring with support",
+      "url": "https://www.thecommunityguide.org/findings/heart-disease-stroke-prevention-self-measured-blood-pressure-with-additional-support.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2013-02"
+    },
+    {
+      "id": "cpstf-chw-cvd",
+      "title": "CPSTF: Community health worker cardiovascular care",
+      "url": "https://www.thecommunityguide.org/findings/heart-disease-stroke-prevention-interventions-engaging-community-health-workers.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2013-07"
+    },
+    {
+      "id": "cpstf-digital-bp",
+      "title": "CPSTF: Interactive digital BP self-management",
+      "url": "https://www.thecommunityguide.org/findings/heart-disease-stroke-prevention-interactive-digital-interventions-blood-pressure-self-management.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2014"
+    },
+    {
+      "id": "cpstf-pharmacy-adherence",
+      "title": "CPSTF: Tailored pharmacy adherence support",
+      "url": "https://www.thecommunityguide.org/findings/heart-disease-stroke-prevention-tailored-pharmacy-based-interventions-improve-medication-adherence.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2018-08"
+    },
+    {
+      "id": "cpstf-medication-cost-support",
+      "title": "CPSTF: Reduce cardiovascular medication costs",
+      "url": "https://www.thecommunityguide.org/findings/heart-disease-stroke-prevention-reducing-out-pocket-costs-preventive-services.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2015-07"
+    },
+    {
+      "id": "cpstf-collaborative-depression",
+      "title": "CPSTF: Collaborative depression care",
+      "url": "https://www.thecommunityguide.org/findings/mental-health-and-mental-illness-collaborative-care-management-depressive-disorders.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2012-02"
+    },
+    {
+      "id": "archer-2012",
+      "title": "Archer et al. Collaborative care for depression and anxiety problems",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23076925/",
+      "publisher": "Cochrane Database of Systematic Reviews",
+      "retrievedAt": "2026-10-26",
+      "year": 2012,
+      "version": "10.1002/14651858.CD006525.pub2; PMID 23076925",
+      "license": "Bibliographic facts; full text retains publisher license.",
+      "cutoff": "2012-02"
+    },
+    {
+      "id": "cpstf-home-depression",
+      "title": "CPSTF: Home depression care for older adults",
+      "url": "https://www.thecommunityguide.org/findings/mental-health-and-mental-illness-interventions-reduce-depression-among-older-adults-home.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2005-10"
+    },
+    {
+      "id": "cpstf-targeted-school-cbt",
+      "title": "CPSTF: Targeted school-based CBT",
+      "url": "https://www.thecommunityguide.org/findings/mental-health-targeted-school-based-cognitive-behavioral-therapy-programs-reduce-depression-anxiety-symptoms.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2015"
+    },
+    {
+      "id": "cpstf-universal-school-cbt",
+      "title": "CPSTF: Universal school-based CBT",
+      "url": "https://www.thecommunityguide.org/findings/mental-health-universal-school-based-cognitive-behavioral-therapy-programs-reduce-depression-anxiety-symptoms.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2015"
+    },
+    {
+      "id": "cpstf-asthma-home",
+      "title": "CPSTF: Healthy homes for children with asthma",
+      "url": "https://www.thecommunityguide.org/findings/asthma-home-based-multi-trigger-multicomponent-environmental-interventions-children-adolescents-asthma.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2008-02"
+    },
+    {
+      "id": "cpstf-vaccine-reminders",
+      "title": "CPSTF: Vaccination reminders and recall",
+      "url": "https://www.thecommunityguide.org/findings/vaccination-programs-client-reminder-and-recall-systems.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2012"
+    },
+    {
+      "id": "cpstf-vaccine-standing-orders",
+      "title": "CPSTF: Vaccination standing orders",
+      "url": "https://www.thecommunityguide.org/findings/vaccination-programs-standing-orders.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2012-02"
+    },
+    {
+      "id": "cpstf-vaccine-home",
+      "title": "CPSTF: Home vaccination outreach",
+      "url": "https://www.thecommunityguide.org/findings/vaccination-programs-home-visits-increase-vaccination-rates.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2012"
+    },
+    {
+      "id": "cpstf-quitline",
+      "title": "CPSTF: Proactive tobacco quitline",
+      "url": "https://www.thecommunityguide.org/findings/tobacco-use-quitline-interventions.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2013-06"
+    },
+    {
+      "id": "cpstf-cessation-text",
+      "title": "CPSTF: Tobacco cessation text messaging",
+      "url": "https://www.thecommunityguide.org/findings/tobacco-use-mobile-phone-text-messaging-cessation-interventions.html",
+      "publisher": "Community Preventive Services Task Force",
+      "retrievedAt": "2026-10-26",
+      "year": null,
+      "version": "public summary retrieved 2026-10-26",
+      "license": "Publicly accessible; attribute CPSTF; linked publications retain their own licenses.",
+      "cutoff": "2018-10"
+    }
+  ],
+  "interventions": [
+    {
+      "id": "crc-navigation",
+      "name": "Colorectal screening navigation",
+      "domain": "Care access",
+      "concepts": [
+        "primary-care",
+        "screening",
+        "navigation",
+        "transportation"
+      ],
+      "description": "Navigator + phone to address care access barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "Adults eligible for colorectal screening, especially populations facing access barriers",
+      "setting": "Clinic + community",
+      "channel": "Navigator + phone",
+      "components": [
+        "Navigator + phone",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Navigator + phone",
+      "complexity": "Moderate",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "Crude-prevalence context is adults 45\u201375; local age eligibility still needs verification.",
+      "sourceIds": [
+        "cpstf-crc-navigation"
+      ],
+      "effectIds": [
+        "effect-crc-navigation"
+      ],
+      "economicIds": [
+        "economic-crc-navigation"
+      ],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "((\"colorectal cancer\" OR colonoscopy OR \"fecal immunochemical\") AND (\"patient navigation\" OR navigator)) AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "CPSTF recommendation",
+      "populationBase": "adult",
+      "needMeasure": "COLON_SCREEN",
+      "needComplement": true,
+      "defaults": {
+        "demographicShare": 0.45,
+        "needShare": 0.35,
+        "baselineRisk": 0.2,
+        "followUpMonths": 12,
+        "serviceHours": 1.5,
+        "variableCost": 40,
+        "setupCost": 10000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the adult population; verify exact age and eligibility locally.",
+        "needShare": "Crude-prevalence context is adults 45\u201375; local age eligibility still needs verification.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "Crude-prevalence context is adults 45\u201375; local age eligibility still needs verification."
+      },
+      "logic": [
+        {
+          "to": "Navigator + phone",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Additional people screened",
+          "status": "SUPPORTED",
+          "reason": "Crude-prevalence context is adults 45\u201375; local age eligibility still needs verification.",
+          "sourceId": "cpstf-crc-navigation",
+          "from": "Navigator + phone"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Additional people screened"
+        }
+      ]
+    },
+    {
+      "id": "breast-navigation",
+      "name": "Breast screening navigation",
+      "domain": "Care access",
+      "concepts": [
+        "primary-care",
+        "screening",
+        "navigation",
+        "transportation"
+      ],
+      "description": "Navigator + phone to address care access barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "Women eligible for breast screening facing access barriers",
+      "setting": "Clinic + community",
+      "channel": "Navigator + phone",
+      "components": [
+        "Navigator + phone",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Navigator + phone",
+      "complexity": "Moderate",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "Mammography metric covers women 50\u201374; eligibility fraction is a scenario assumption.",
+      "sourceIds": [
+        "cpstf-breast-navigation"
+      ],
+      "effectIds": [
+        "effect-breast-navigation"
+      ],
+      "economicIds": [
+        "economic-breast-navigation"
+      ],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "(\"breast cancer screening\" AND (\"patient navigation\" OR navigator)) AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "CPSTF recommendation",
+      "populationBase": "adult",
+      "needMeasure": "MAMMOUSE",
+      "needComplement": true,
+      "defaults": {
+        "demographicShare": 0.2,
+        "needShare": 0.25,
+        "baselineRisk": 0.4,
+        "followUpMonths": 12,
+        "serviceHours": 1.5,
+        "variableCost": 40,
+        "setupCost": 10000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the adult population; verify exact age and eligibility locally.",
+        "needShare": "Mammography metric covers women 50\u201374; eligibility fraction is a scenario assumption.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "Mammography metric covers women 50\u201374; eligibility fraction is a scenario assumption."
+      },
+      "logic": [
+        {
+          "to": "Navigator + phone",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Additional people screened",
+          "status": "SUPPORTED",
+          "reason": "Mammography metric covers women 50\u201374; eligibility fraction is a scenario assumption.",
+          "sourceId": "cpstf-breast-navigation",
+          "from": "Navigator + phone"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Additional people screened"
+        }
+      ]
+    },
+    {
+      "id": "cervical-navigation",
+      "name": "Cervical screening navigation",
+      "domain": "Care access",
+      "concepts": [
+        "primary-care",
+        "screening",
+        "navigation",
+        "transportation"
+      ],
+      "description": "Navigator + phone to address care access barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "People eligible for cervical screening facing access barriers",
+      "setting": "Clinic + community",
+      "channel": "Navigator + phone",
+      "components": [
+        "Navigator + phone",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Navigator + phone",
+      "complexity": "Moderate",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "No pooled CI; reported median change is not a probabilistic distribution.",
+      "sourceIds": [
+        "cpstf-cervical-navigation"
+      ],
+      "effectIds": [
+        "effect-cervical-navigation"
+      ],
+      "economicIds": [],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "(\"cervical cancer screening\" AND (\"patient navigation\" OR navigator)) AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "CPSTF recommendation",
+      "populationBase": "adult",
+      "needMeasure": null,
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 0.35,
+        "needShare": 0.3,
+        "baselineRisk": 0.35,
+        "followUpMonths": 12,
+        "serviceHours": 1.5,
+        "variableCost": 40,
+        "setupCost": 10000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the adult population; verify exact age and eligibility locally.",
+        "needShare": "No pooled CI; reported median change is not a probabilistic distribution.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "No pooled CI; reported median change is not a probabilistic distribution."
+      },
+      "logic": [
+        {
+          "to": "Navigator + phone",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Additional people screened",
+          "status": "SUPPORTED",
+          "reason": "No pooled CI; reported median change is not a probabilistic distribution.",
+          "sourceId": "cpstf-cervical-navigation",
+          "from": "Navigator + phone"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Additional people screened"
+        }
+      ]
+    },
+    {
+      "id": "diabetes-prevention",
+      "name": "Community diabetes prevention",
+      "domain": "Prevention",
+      "concepts": [
+        "screening",
+        "risk-management"
+      ],
+      "description": "Group coaching to address prevention barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "Adults at elevated diabetes risk without diagnosed diabetes",
+      "setting": "Community + primary care",
+      "channel": "Group coaching",
+      "components": [
+        "Group coaching",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Group coaching",
+      "complexity": "Moderate",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "Effect source spans heterogeneous follow-up; 36-month risk and lag are assumptions requiring review.",
+      "sourceIds": [
+        "cpstf-diabetes-prevention",
+        "cpstf-diabetes-rationale"
+      ],
+      "effectIds": [
+        "effect-diabetes-prevention"
+      ],
+      "economicIds": [
+        "economic-diabetes-prevention"
+      ],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "((\"diabetes prevention\" OR prediabetes) AND (\"lifestyle intervention\" OR \"diet and physical activity\" OR \"diabetes prevention program\")) AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "Strong CPSTF finding",
+      "populationBase": "adult",
+      "needMeasure": null,
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 1,
+        "needShare": 0.2,
+        "baselineRisk": 0.2,
+        "followUpMonths": 36,
+        "serviceHours": 1.5,
+        "variableCost": 40,
+        "setupCost": 10000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the adult population; verify exact age and eligibility locally.",
+        "needShare": "Effect source spans heterogeneous follow-up; 36-month risk and lag are assumptions requiring review.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "Effect source spans heterogeneous follow-up; 36-month risk and lag are assumptions requiring review."
+      },
+      "logic": [
+        {
+          "to": "Group coaching",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Cases of diabetes prevented",
+          "status": "SUPPORTED",
+          "reason": "Effect source spans heterogeneous follow-up; 36-month risk and lag are assumptions requiring review.",
+          "sourceId": "cpstf-diabetes-rationale",
+          "from": "Group coaching"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Cases of diabetes prevented"
+        }
+      ]
+    },
+    {
+      "id": "team-bp",
+      "name": "Team-based blood pressure care",
+      "domain": "Workforce & staffing",
+      "concepts": [
+        "capacity",
+        "navigation",
+        "risk-management"
+      ],
+      "description": "Nurse / pharmacist team to address workforce & staffing barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "Adults with hypertension",
+      "setting": "Primary care",
+      "channel": "Nurse / pharmacist team",
+      "components": [
+        "Nurse / pharmacist team",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Nurse / pharmacist team",
+      "complexity": "Higher",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "Baseline control and severity are not measured by PLACES hypertension prevalence.",
+      "sourceIds": [
+        "cpstf-team-bp"
+      ],
+      "effectIds": [
+        "effect-team-bp"
+      ],
+      "economicIds": [
+        "economic-team-bp"
+      ],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "((\"cognitive behavioral therapy\" OR \"cognitive behavioural therapy\") AND school AND (depression OR anxiety) AND universal) AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "Strong CPSTF finding",
+      "populationBase": "adult",
+      "needMeasure": "BPHIGH",
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 1,
+        "needShare": 0.35,
+        "baselineRisk": 0.4,
+        "followUpMonths": 12,
+        "serviceHours": 3,
+        "variableCost": 100,
+        "setupCost": 25000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the adult population; verify exact age and eligibility locally.",
+        "needShare": "Baseline control and severity are not measured by PLACES hypertension prevalence.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "Baseline control and severity are not measured by PLACES hypertension prevalence."
+      },
+      "logic": [
+        {
+          "to": "Nurse / pharmacist team",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Additional people with controlled BP",
+          "status": "SUPPORTED",
+          "reason": "Baseline control and severity are not measured by PLACES hypertension prevalence.",
+          "sourceId": "cpstf-team-bp",
+          "from": "Nurse / pharmacist team"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Additional people with controlled BP"
+        }
+      ]
+    },
+    {
+      "id": "supported-smbp",
+      "name": "Home BP monitoring with support",
+      "domain": "Prevention",
+      "concepts": [
+        "screening",
+        "risk-management"
+      ],
+      "description": "Monitor + clinical follow-up to address prevention barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "Adults with hypertension able to share home readings",
+      "setting": "Home + primary care",
+      "channel": "Monitor + clinical follow-up",
+      "components": [
+        "Monitor + clinical follow-up",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Monitor + clinical follow-up",
+      "complexity": "Moderate",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "Median 9-month control outcome; monitor, training and follow-up must be delivered together.",
+      "sourceIds": [
+        "cpstf-supported-smbp"
+      ],
+      "effectIds": [
+        "effect-supported-smbp"
+      ],
+      "economicIds": [
+        "economic-supported-smbp"
+      ],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "(hypertension AND (\"self measured blood pressure\" OR \"home blood pressure monitoring\") AND (support OR counseling OR telemonitoring)) AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "Strong CPSTF finding",
+      "populationBase": "adult",
+      "needMeasure": "BPHIGH",
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 1,
+        "needShare": 0.35,
+        "baselineRisk": 0.4,
+        "followUpMonths": 9,
+        "serviceHours": 1.5,
+        "variableCost": 40,
+        "setupCost": 10000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the adult population; verify exact age and eligibility locally.",
+        "needShare": "Median 9-month control outcome; monitor, training and follow-up must be delivered together.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "Median 9-month control outcome; monitor, training and follow-up must be delivered together."
+      },
+      "logic": [
+        {
+          "to": "Monitor + clinical follow-up",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Additional people with controlled BP",
+          "status": "SUPPORTED",
+          "reason": "Median 9-month control outcome; monitor, training and follow-up must be delivered together.",
+          "sourceId": "cpstf-supported-smbp",
+          "from": "Monitor + clinical follow-up"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Additional people with controlled BP"
+        }
+      ]
+    },
+    {
+      "id": "chw-cvd",
+      "name": "Community health worker cardiovascular care",
+      "domain": "Workforce & staffing",
+      "concepts": [
+        "capacity",
+        "navigation",
+        "risk-management"
+      ],
+      "description": "CHW integrated with clinical team to address workforce & staffing barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "Adults at cardiovascular risk, including underserved communities",
+      "setting": "Community + primary care",
+      "channel": "CHW integrated with clinical team",
+      "components": [
+        "CHW integrated with clinical team",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "CHW integrated with clinical team",
+      "complexity": "Higher",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "Use the team-based CHW version; education alone does not inherit this effect.",
+      "sourceIds": [
+        "cpstf-chw-cvd"
+      ],
+      "effectIds": [
+        "effect-chw-cvd"
+      ],
+      "economicIds": [
+        "economic-chw-cvd"
+      ],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "((hypertension OR \"cardiovascular disease\") AND \"community health workers\") AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "Strong CPSTF finding",
+      "populationBase": "adult",
+      "needMeasure": "BPHIGH",
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 1,
+        "needShare": 0.35,
+        "baselineRisk": 0.4,
+        "followUpMonths": 12,
+        "serviceHours": 3,
+        "variableCost": 100,
+        "setupCost": 25000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the adult population; verify exact age and eligibility locally.",
+        "needShare": "Use the team-based CHW version; education alone does not inherit this effect.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "Use the team-based CHW version; education alone does not inherit this effect."
+      },
+      "logic": [
+        {
+          "to": "CHW integrated with clinical team",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Additional people with controlled BP",
+          "status": "SUPPORTED",
+          "reason": "Use the team-based CHW version; education alone does not inherit this effect.",
+          "sourceId": "cpstf-chw-cvd",
+          "from": "CHW integrated with clinical team"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Additional people with controlled BP"
+        }
+      ]
+    },
+    {
+      "id": "digital-bp",
+      "name": "Interactive digital BP self-management",
+      "domain": "Prevention",
+      "concepts": [
+        "screening",
+        "risk-management"
+      ],
+      "description": "Interactive digital support to address prevention barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "Adults with hypertension and digital access",
+      "setting": "Primary care + remote",
+      "channel": "Interactive digital support",
+      "components": [
+        "Interactive digital support",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Interactive digital support",
+      "complexity": "Moderate",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "Mean BP reduction is continuous; do not convert it directly to controlled cases or admissions.",
+      "sourceIds": [
+        "cpstf-digital-bp"
+      ],
+      "effectIds": [
+        "effect-digital-bp"
+      ],
+      "economicIds": [],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "(hypertension AND \"self management\" AND (digital OR internet OR interactive)) AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "Sufficient CPSTF finding",
+      "populationBase": "adult",
+      "needMeasure": "BPHIGH",
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 1,
+        "needShare": 0.35,
+        "baselineRisk": 0.4,
+        "followUpMonths": 6,
+        "serviceHours": 1.5,
+        "variableCost": 40,
+        "setupCost": 10000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the adult population; verify exact age and eligibility locally.",
+        "needShare": "Mean BP reduction is continuous; do not convert it directly to controlled cases or admissions.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "Six months matches the median intervention duration reported in the source review."
+      },
+      "logic": [
+        {
+          "to": "Interactive digital support",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Mean systolic BP reduction",
+          "status": "SUPPORTED",
+          "reason": "Mean BP reduction is continuous; do not convert it directly to controlled cases or admissions.",
+          "sourceId": "cpstf-digital-bp",
+          "from": "Interactive digital support"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Mean systolic BP reduction"
+        }
+      ]
+    },
+    {
+      "id": "pharmacy-adherence",
+      "name": "Tailored pharmacy adherence support",
+      "domain": "Affordability",
+      "concepts": [
+        "medication-cost",
+        "insurance",
+        "adherence"
+      ],
+      "description": "Pharmacist assessment + tailoring to address affordability barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "People prescribed cardiovascular preventive medication",
+      "setting": "Pharmacy + primary care",
+      "channel": "Pharmacist assessment + tailoring",
+      "components": [
+        "Pharmacist assessment + tailoring",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Pharmacist assessment + tailoring",
+      "complexity": "Moderate",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "Adherence threshold is at least 80%; hypertension prevalence is context, not medication eligibility.",
+      "sourceIds": [
+        "cpstf-pharmacy-adherence"
+      ],
+      "effectIds": [
+        "effect-pharmacy-adherence"
+      ],
+      "economicIds": [
+        "economic-pharmacy-adherence"
+      ],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "((\"cardiovascular disease\" OR hypertension) AND \"medication adherence\" AND (pharmacy OR pharmacist)) AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "Strong CPSTF finding",
+      "populationBase": "adult",
+      "needMeasure": null,
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 1,
+        "needShare": 0.25,
+        "baselineRisk": 0.6,
+        "followUpMonths": 12,
+        "serviceHours": 1.5,
+        "variableCost": 40,
+        "setupCost": 10000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the adult population; verify exact age and eligibility locally.",
+        "needShare": "Adherence threshold is at least 80%; hypertension prevalence is context, not medication eligibility.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "Adherence threshold is at least 80%; hypertension prevalence is context, not medication eligibility."
+      },
+      "logic": [
+        {
+          "to": "Pharmacist assessment + tailoring",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Additional medication-adherent people",
+          "status": "SUPPORTED",
+          "reason": "Adherence threshold is at least 80%; hypertension prevalence is context, not medication eligibility.",
+          "sourceId": "cpstf-pharmacy-adherence",
+          "from": "Pharmacist assessment + tailoring"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Additional medication-adherent people"
+        }
+      ]
+    },
+    {
+      "id": "medication-cost-support",
+      "name": "Reduce cardiovascular medication costs",
+      "domain": "Affordability",
+      "concepts": [
+        "medication-cost",
+        "insurance",
+        "adherence"
+      ],
+      "description": "Copayment assistance + counseling to address affordability barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "People with hypertension or hyperlipidemia facing medication costs",
+      "setting": "Payer + pharmacy",
+      "channel": "Copayment assistance + counseling",
+      "components": [
+        "Copayment assistance + counseling",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Copayment assistance + counseling",
+      "complexity": "Moderate",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "BP-goal estimate is a median from three studies; economic evidence is inconsistent.",
+      "sourceIds": [
+        "cpstf-medication-cost-support"
+      ],
+      "effectIds": [
+        "effect-medication-cost-support"
+      ],
+      "economicIds": [
+        "economic-medication-cost-support"
+      ],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "((hypertension OR \"cardiovascular disease\") AND (\"out of pocket\" OR copayment OR \"cost sharing\")) AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "Strong CPSTF finding",
+      "populationBase": "adult",
+      "needMeasure": null,
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 1,
+        "needShare": 0.2,
+        "baselineRisk": 0.4,
+        "followUpMonths": 12,
+        "serviceHours": 1.5,
+        "variableCost": 40,
+        "setupCost": 10000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the adult population; verify exact age and eligibility locally.",
+        "needShare": "BP-goal estimate is a median from three studies; economic evidence is inconsistent.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "BP-goal estimate is a median from three studies; economic evidence is inconsistent."
+      },
+      "logic": [
+        {
+          "to": "Copayment assistance + counseling",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Additional people with controlled BP",
+          "status": "SUPPORTED",
+          "reason": "BP-goal estimate is a median from three studies; economic evidence is inconsistent.",
+          "sourceId": "cpstf-medication-cost-support",
+          "from": "Copayment assistance + counseling"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Additional people with controlled BP"
+        }
+      ]
+    },
+    {
+      "id": "collaborative-depression",
+      "name": "Collaborative depression care",
+      "domain": "Mental health",
+      "concepts": [
+        "behavioral-access",
+        "depression"
+      ],
+      "description": "Care manager + psychiatric consultation to address mental health barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "Adults with active depression in primary care",
+      "setting": "Primary care",
+      "channel": "Care manager + psychiatric consultation",
+      "components": [
+        "Care manager + psychiatric consultation",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Care manager + psychiatric consultation",
+      "complexity": "Higher",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "Short-term response RR from Archer 2012; diagnosed-ever depression is not active major depression.",
+      "sourceIds": [
+        "cpstf-collaborative-depression",
+        "archer-2012"
+      ],
+      "effectIds": [
+        "effect-collaborative-depression"
+      ],
+      "economicIds": [
+        "economic-collaborative-depression"
+      ],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "(\"collaborative care\" AND (depression OR depressive)) AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "Strong CPSTF finding",
+      "populationBase": "adult",
+      "needMeasure": null,
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 1,
+        "needShare": 0.1,
+        "baselineRisk": 0.35,
+        "followUpMonths": 6,
+        "serviceHours": 3,
+        "variableCost": 100,
+        "setupCost": 25000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the adult population; verify exact age and eligibility locally.",
+        "needShare": "Short-term response RR from Archer 2012; diagnosed-ever depression is not active major depression.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "Short-term response RR from Archer 2012; diagnosed-ever depression is not active major depression."
+      },
+      "logic": [
+        {
+          "to": "Care manager + psychiatric consultation",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Additional depression responses",
+          "status": "SUPPORTED",
+          "reason": "Short-term response RR from Archer 2012; diagnosed-ever depression is not active major depression.",
+          "sourceId": "archer-2012",
+          "from": "Care manager + psychiatric consultation"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Additional depression responses"
+        }
+      ]
+    },
+    {
+      "id": "home-depression",
+      "name": "Home depression care for older adults",
+      "domain": "Mental health",
+      "concepts": [
+        "behavioral-access",
+        "depression"
+      ],
+      "description": "Case management + clinician support to address mental health barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "Older adults with depression, including home-care clients",
+      "setting": "Home",
+      "channel": "Case management + clinician support",
+      "components": [
+        "Case management + clinician support",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Case management + clinician support",
+      "complexity": "Higher",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "Summary response rates lack a clear incremental comparator; no transportable effect is prefilled.",
+      "sourceIds": [
+        "cpstf-home-depression"
+      ],
+      "effectIds": [
+        "effect-home-depression"
+      ],
+      "economicIds": [],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "(depression AND (\"home-based\" OR \"home visits\") AND (elderly OR \"older adults\")) AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "CPSTF recommendation",
+      "populationBase": "adult",
+      "needMeasure": null,
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 0.22,
+        "needShare": 0.1,
+        "baselineRisk": 0.35,
+        "followUpMonths": 6,
+        "serviceHours": 3,
+        "variableCost": 100,
+        "setupCost": 25000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the adult population; verify exact age and eligibility locally.",
+        "needShare": "Summary response rates lack a clear incremental comparator; no transportable effect is prefilled.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "Summary response rates lack a clear incremental comparator; no transportable effect is prefilled."
+      },
+      "logic": [
+        {
+          "to": "Case management + clinician support",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Additional depression responses",
+          "status": "SUPPORTED",
+          "reason": "Summary response rates lack a clear incremental comparator; no transportable effect is prefilled.",
+          "sourceId": "cpstf-home-depression",
+          "from": "Case management + clinician support"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Additional depression responses"
+        }
+      ]
+    },
+    {
+      "id": "targeted-school-cbt",
+      "name": "Targeted school-based CBT",
+      "domain": "Mental health",
+      "concepts": [
+        "behavioral-access",
+        "depression"
+      ],
+      "description": "Targeted CBT program to address mental health barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "Students aged 7\u201318 with elevated depression or anxiety symptoms",
+      "setting": "School",
+      "channel": "Targeted CBT program",
+      "components": [
+        "Targeted CBT program",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Targeted CBT program",
+      "complexity": "Higher",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "Qualitative benefit supported; numeric effect and target scale SD need extraction and review.",
+      "sourceIds": [
+        "cpstf-targeted-school-cbt"
+      ],
+      "effectIds": [
+        "effect-targeted-school-cbt"
+      ],
+      "economicIds": [],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "((\"cognitive behavioral therapy\" OR \"cognitive behavioural therapy\") AND school AND (depression OR anxiety) AND targeted) AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "Strong CPSTF finding",
+      "populationBase": "child",
+      "needMeasure": null,
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 0.65,
+        "needShare": 0.15,
+        "baselineRisk": 0.3,
+        "followUpMonths": 6,
+        "serviceHours": 3,
+        "variableCost": 100,
+        "setupCost": 25000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the under-18 population; verify exact age and eligibility locally.",
+        "needShare": "Qualitative benefit supported; numeric effect and target scale SD need extraction and review.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "Qualitative benefit supported; numeric effect and target scale SD need extraction and review."
+      },
+      "logic": [
+        {
+          "to": "Targeted CBT program",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Depression symptom improvement",
+          "status": "SUPPORTED",
+          "reason": "Qualitative benefit supported; numeric effect and target scale SD need extraction and review.",
+          "sourceId": "cpstf-targeted-school-cbt",
+          "from": "Targeted CBT program"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Depression symptom improvement"
+        }
+      ]
+    },
+    {
+      "id": "universal-school-cbt",
+      "name": "Universal school-based CBT",
+      "domain": "Mental health",
+      "concepts": [
+        "behavioral-access",
+        "depression"
+      ],
+      "description": "Universal classroom CBT to address mental health barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "School students aged 7\u201318",
+      "setting": "School",
+      "channel": "Universal classroom CBT",
+      "components": [
+        "Universal classroom CBT",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Universal classroom CBT",
+      "complexity": "Higher",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "No unverified SMD-to-case conversion; local school enrollment is needed for eligibility.",
+      "sourceIds": [
+        "cpstf-universal-school-cbt"
+      ],
+      "effectIds": [
+        "effect-universal-school-cbt"
+      ],
+      "economicIds": [],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "((\"cognitive behavioral therapy\" OR \"cognitive behavioural therapy\") AND school AND (depression OR anxiety) AND universal) AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "Strong CPSTF finding",
+      "populationBase": "child",
+      "needMeasure": null,
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 0.65,
+        "needShare": 1,
+        "baselineRisk": 0.3,
+        "followUpMonths": 6,
+        "serviceHours": 3,
+        "variableCost": 100,
+        "setupCost": 25000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the under-18 population; verify exact age and eligibility locally.",
+        "needShare": "No unverified SMD-to-case conversion; local school enrollment is needed for eligibility.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "No unverified SMD-to-case conversion; local school enrollment is needed for eligibility."
+      },
+      "logic": [
+        {
+          "to": "Universal classroom CBT",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Depression symptom improvement",
+          "status": "SUPPORTED",
+          "reason": "No unverified SMD-to-case conversion; local school enrollment is needed for eligibility.",
+          "sourceId": "cpstf-universal-school-cbt",
+          "from": "Universal classroom CBT"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Depression symptom improvement"
+        }
+      ]
+    },
+    {
+      "id": "asthma-home",
+      "name": "Healthy homes for children with asthma",
+      "domain": "Environmental health",
+      "concepts": [
+        "air",
+        "asthma",
+        "housing"
+      ],
+      "description": "Home assessment + remediation + education to address environmental health barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "Children and adolescents with asthma and home trigger exposure",
+      "setting": "Home",
+      "channel": "Home assessment + remediation + education",
+      "components": [
+        "Home assessment + remediation + education",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Home assessment + remediation + education",
+      "complexity": "Higher",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "Pediatric eligibility is user-assumed; adult asthma prevalence must not substitute.",
+      "sourceIds": [
+        "cpstf-asthma-home"
+      ],
+      "effectIds": [
+        "effect-asthma-home"
+      ],
+      "economicIds": [
+        "economic-asthma-home"
+      ],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "(asthma AND (\"home visits\" OR \"home environmental\" OR \"multi-trigger\" OR \"home-based\")) AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "Strong CPSTF finding",
+      "populationBase": "child",
+      "needMeasure": null,
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 1,
+        "needShare": 0.08,
+        "baselineRisk": 0,
+        "followUpMonths": 12,
+        "serviceHours": 3,
+        "variableCost": 100,
+        "setupCost": 25000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the under-18 population; verify exact age and eligibility locally.",
+        "needShare": "Pediatric eligibility is user-assumed; adult asthma prevalence must not substitute.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "Pediatric eligibility is user-assumed; adult asthma prevalence must not substitute."
+      },
+      "logic": [
+        {
+          "to": "Home assessment + remediation + education",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Additional symptom-free days",
+          "status": "SUPPORTED",
+          "reason": "Pediatric eligibility is user-assumed; adult asthma prevalence must not substitute.",
+          "sourceId": "cpstf-asthma-home",
+          "from": "Home assessment + remediation + education"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Additional symptom-free days"
+        }
+      ]
+    },
+    {
+      "id": "vaccine-reminders",
+      "name": "Vaccination reminders and recall",
+      "domain": "Infectious disease",
+      "concepts": [
+        "vaccination",
+        "outreach"
+      ],
+      "description": "Personalized reminder / recall to address infectious disease barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "People due or overdue for a specified vaccination",
+      "setting": "Clinic + community",
+      "channel": "Personalized reminder / recall",
+      "components": [
+        "Personalized reminder / recall",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Personalized reminder / recall",
+      "complexity": "Lower",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "Six percentage points is the reminder-only median; choose an actual vaccine and denominator.",
+      "sourceIds": [
+        "cpstf-vaccine-reminders"
+      ],
+      "effectIds": [
+        "effect-vaccine-reminders"
+      ],
+      "economicIds": [
+        "economic-vaccine-reminders"
+      ],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "((vaccination OR immunization) AND (\"reminder recall\" OR \"client reminders\" OR \"patient reminders\")) AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "CPSTF recommendation",
+      "populationBase": "adult",
+      "needMeasure": null,
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 1,
+        "needShare": 0.3,
+        "baselineRisk": 0.4,
+        "followUpMonths": 12,
+        "serviceHours": 0.25,
+        "variableCost": 5,
+        "setupCost": 10000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the adult population; verify exact age and eligibility locally.",
+        "needShare": "Six percentage points is the reminder-only median; choose an actual vaccine and denominator.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "Six percentage points is the reminder-only median; choose an actual vaccine and denominator."
+      },
+      "logic": [
+        {
+          "to": "Personalized reminder / recall",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Additional people vaccinated",
+          "status": "SUPPORTED",
+          "reason": "Six percentage points is the reminder-only median; choose an actual vaccine and denominator.",
+          "sourceId": "cpstf-vaccine-reminders",
+          "from": "Personalized reminder / recall"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Additional people vaccinated"
+        }
+      ]
+    },
+    {
+      "id": "vaccine-standing-orders",
+      "name": "Vaccination standing orders",
+      "domain": "Infectious disease",
+      "concepts": [
+        "vaccination",
+        "outreach"
+      ],
+      "description": "Approved protocol + trained provider to address infectious disease barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "People eligible for a specified vaccination in clinical settings",
+      "setting": "Clinic / pharmacy",
+      "channel": "Approved protocol + trained provider",
+      "components": [
+        "Approved protocol + trained provider",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Approved protocol + trained provider",
+      "complexity": "Moderate",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "Standing-orders-alone median; requires locally approved clinical protocols.",
+      "sourceIds": [
+        "cpstf-vaccine-standing-orders"
+      ],
+      "effectIds": [
+        "effect-vaccine-standing-orders"
+      ],
+      "economicIds": [
+        "economic-vaccine-standing-orders"
+      ],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "(vaccination AND \"standing orders\") AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "CPSTF recommendation",
+      "populationBase": "adult",
+      "needMeasure": null,
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 1,
+        "needShare": 0.3,
+        "baselineRisk": 0.4,
+        "followUpMonths": 12,
+        "serviceHours": 1.5,
+        "variableCost": 40,
+        "setupCost": 10000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the adult population; verify exact age and eligibility locally.",
+        "needShare": "Standing-orders-alone median; requires locally approved clinical protocols.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "Standing-orders-alone median; requires locally approved clinical protocols."
+      },
+      "logic": [
+        {
+          "to": "Approved protocol + trained provider",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Additional people vaccinated",
+          "status": "SUPPORTED",
+          "reason": "Standing-orders-alone median; requires locally approved clinical protocols.",
+          "sourceId": "cpstf-vaccine-standing-orders",
+          "from": "Approved protocol + trained provider"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Additional people vaccinated"
+        }
+      ]
+    },
+    {
+      "id": "vaccine-home",
+      "name": "Home vaccination outreach",
+      "domain": "Infectious disease",
+      "concepts": [
+        "vaccination",
+        "outreach"
+      ],
+      "description": "Home assessment + vaccination / referral to address infectious disease barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "People due for vaccination who need home outreach",
+      "setting": "Home",
+      "channel": "Home assessment + vaccination / referral",
+      "components": [
+        "Home assessment + vaccination / referral",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Home assessment + vaccination / referral",
+      "complexity": "Higher",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "Home delivery and referral require different capacities; choose the local version.",
+      "sourceIds": [
+        "cpstf-vaccine-home"
+      ],
+      "effectIds": [
+        "effect-vaccine-home"
+      ],
+      "economicIds": [
+        "economic-vaccine-home"
+      ],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "((vaccination OR immunization) AND \"home visits\") AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "CPSTF recommendation",
+      "populationBase": "adult",
+      "needMeasure": null,
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 1,
+        "needShare": 0.15,
+        "baselineRisk": 0.4,
+        "followUpMonths": 12,
+        "serviceHours": 3,
+        "variableCost": 100,
+        "setupCost": 25000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the adult population; verify exact age and eligibility locally.",
+        "needShare": "Home delivery and referral require different capacities; choose the local version.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "Home delivery and referral require different capacities; choose the local version."
+      },
+      "logic": [
+        {
+          "to": "Home assessment + vaccination / referral",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Additional people vaccinated",
+          "status": "SUPPORTED",
+          "reason": "Home delivery and referral require different capacities; choose the local version.",
+          "sourceId": "cpstf-vaccine-home",
+          "from": "Home assessment + vaccination / referral"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Additional people vaccinated"
+        }
+      ]
+    },
+    {
+      "id": "quitline",
+      "name": "Proactive tobacco quitline",
+      "domain": "Prevention",
+      "concepts": [
+        "screening",
+        "risk-management"
+      ],
+      "description": "Proactive telephone counseling to address prevention barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "Adults who smoke and want to quit",
+      "setting": "Community + remote",
+      "channel": "Proactive telephone counseling",
+      "components": [
+        "Proactive telephone counseling",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Proactive telephone counseling",
+      "complexity": "Lower",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "General-public proactive quitline median; not a benefit for simply sharing a phone number.",
+      "sourceIds": [
+        "cpstf-quitline"
+      ],
+      "effectIds": [
+        "effect-quitline"
+      ],
+      "economicIds": [
+        "economic-quitline"
+      ],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "(\"smoking cessation\" AND (quitline OR \"telephone counseling\")) AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "Strong CPSTF finding",
+      "populationBase": "adult",
+      "needMeasure": "CSMOKING",
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 1,
+        "needShare": 0.18,
+        "baselineRisk": 0.05,
+        "followUpMonths": 6,
+        "serviceHours": 0.25,
+        "variableCost": 5,
+        "setupCost": 10000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the adult population; verify exact age and eligibility locally.",
+        "needShare": "General-public proactive quitline median; not a benefit for simply sharing a phone number.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "General-public proactive quitline median; not a benefit for simply sharing a phone number."
+      },
+      "logic": [
+        {
+          "to": "Proactive telephone counseling",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Additional people who quit tobacco",
+          "status": "SUPPORTED",
+          "reason": "General-public proactive quitline median; not a benefit for simply sharing a phone number.",
+          "sourceId": "cpstf-quitline",
+          "from": "Proactive telephone counseling"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Additional people who quit tobacco"
+        }
+      ]
+    },
+    {
+      "id": "cessation-text",
+      "name": "Tobacco cessation text messaging",
+      "domain": "Prevention",
+      "concepts": [
+        "screening",
+        "risk-management"
+      ],
+      "description": "Structured text-message support to address prevention barriers, with reviewed intervention components and an explicit local implementation plan.",
+      "population": "Adults who smoke and want to quit with mobile access",
+      "setting": "Community + remote",
+      "channel": "Structured text-message support",
+      "components": [
+        "Structured text-message support",
+        "Eligibility verification and participant consent",
+        "Delivery and follow-up tracking"
+      ],
+      "resources": [
+        "Trained delivery staff",
+        "Community / clinical partner",
+        "Secure program registry",
+        "Referral or follow-up capacity"
+      ],
+      "minimumStaffing": "Local staffing plan required; default FTE is an editable planning assumption.",
+      "intensity": "Structured text-message support",
+      "complexity": "Lower",
+      "equity": "Review access, language, affordability and completion barriers with community partners. County averages do not establish individual need.",
+      "applicability": "Text messaging alone median; do not assign combined-treatment effects to messages alone.",
+      "sourceIds": [
+        "cpstf-cessation-text"
+      ],
+      "effectIds": [
+        "effect-cessation-text"
+      ],
+      "economicIds": [],
+      "searchedAt": "2026-10-26",
+      "searchQuery": "(\"smoking cessation\" AND \"text messaging\") AND (\"systematic review\" OR \"meta-analysis\" OR randomized OR randomised OR \"economic evaluation\" OR \"cost effectiveness\")",
+      "evidenceStrength": "Strong CPSTF finding",
+      "populationBase": "adult",
+      "needMeasure": "CSMOKING",
+      "needComplement": false,
+      "defaults": {
+        "demographicShare": 1,
+        "needShare": 0.18,
+        "baselineRisk": 0.05,
+        "followUpMonths": 6,
+        "serviceHours": 0.25,
+        "variableCost": 5,
+        "setupCost": 10000,
+        "annualOperatingCost": 20000,
+        "staffFte": 2
+      },
+      "defaultReasons": {
+        "demographicShare": "Planning fraction of the adult population; verify exact age and eligibility locally.",
+        "needShare": "Text messaging alone median; do not assign combined-treatment effects to messages alone.",
+        "baselineRisk": "User assumption of comparator outcome over the specified follow-up; not a PLACES disease prevalence.",
+        "followUpMonths": "Text messaging alone median; do not assign combined-treatment effects to messages alone."
+      },
+      "logic": [
+        {
+          "to": "Structured text-message support",
+          "status": "ASSUMED",
+          "reason": "Local operations and capacity must be confirmed.",
+          "sourceId": null,
+          "from": "Resources + community partnership"
+        },
+        {
+          "to": "Additional people who quit tobacco",
+          "status": "SUPPORTED",
+          "reason": "Text messaging alone median; do not assign combined-treatment effects to messages alone.",
+          "sourceId": "cpstf-cessation-text",
+          "from": "Structured text-message support"
+        },
+        {
+          "to": "Local economic value",
+          "status": "MODELED",
+          "reason": "Value only when a separate credible cost or valuation is supplied; no automatic downstream savings.",
+          "sourceId": null,
+          "from": "Additional people who quit tobacco"
+        }
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "effect-crc-navigation",
+      "studyId": "review-patient-navigation-2022",
+      "sourceId": "cpstf-crc-navigation",
+      "measure": "risk_ratio",
+      "estimate": 1.82,
+      "low": 1.5,
+      "high": 2.21,
+      "intervalType": "95% CI",
+      "outcome": "Additional people screened",
+      "outcomeId": "crc-screened",
+      "unit": "people",
+      "direction": "increase",
+      "population": "Adults eligible for colorectal screening, especially populations facing access barriers",
+      "setting": "Clinic + community",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 12,
+      "followUpNote": "Crude-prevalence context is adults 45\u201375; local age eligibility still needs verification.",
+      "sampleSize": null,
+      "studies": 27,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Navigator + phone",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "95% CI reported",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "Crude-prevalence context is adults 45\u201375; local age eligibility still needs verification.",
+        "recency": "Search cutoff 2021-11; retrieval 2026-10-26",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-breast-navigation",
+      "studyId": "review-patient-navigation-2022",
+      "sourceId": "cpstf-breast-navigation",
+      "measure": "risk_ratio",
+      "estimate": 1.32,
+      "low": 1.08,
+      "high": 1.62,
+      "intervalType": "95% CI",
+      "outcome": "Additional people screened",
+      "outcomeId": "breast-screened",
+      "unit": "people",
+      "direction": "increase",
+      "population": "Women eligible for breast screening facing access barriers",
+      "setting": "Clinic + community",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 12,
+      "followUpNote": "Mammography metric covers women 50\u201374; eligibility fraction is a scenario assumption.",
+      "sampleSize": null,
+      "studies": 11,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Navigator + phone",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "95% CI reported",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "Mammography metric covers women 50\u201374; eligibility fraction is a scenario assumption.",
+        "recency": "Search cutoff 2021-11; retrieval 2026-10-26",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-cervical-navigation",
+      "studyId": "review-patient-navigation-2022",
+      "sourceId": "cpstf-cervical-navigation",
+      "measure": "risk_difference",
+      "estimate": 0.225,
+      "low": null,
+      "high": null,
+      "intervalType": "median",
+      "outcome": "Additional people screened",
+      "outcomeId": "cervical-screened",
+      "unit": "people",
+      "direction": "increase",
+      "population": "People eligible for cervical screening facing access barriers",
+      "setting": "Clinic + community",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 12,
+      "followUpNote": "No pooled CI; reported median change is not a probabilistic distribution.",
+      "sampleSize": null,
+      "studies": 3,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Navigator + phone",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "No pooled precision extracted",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "No pooled CI; reported median change is not a probabilistic distribution.",
+        "recency": "Search cutoff 2021-11; retrieval 2026-10-26",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-diabetes-prevention",
+      "studyId": "review-diabetes-prevention",
+      "sourceId": "cpstf-diabetes-rationale",
+      "measure": "risk_ratio",
+      "estimate": 0.59,
+      "low": 0.51,
+      "high": 0.66,
+      "intervalType": "95% CI",
+      "outcome": "Cases of diabetes prevented",
+      "outcomeId": "diabetes-prevented",
+      "unit": "cases",
+      "direction": "decrease",
+      "population": "Adults at elevated diabetes risk without diagnosed diabetes",
+      "setting": "Community + primary care",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 36,
+      "followUpNote": "Effect source spans heterogeneous follow-up; 36-month risk and lag are assumptions requiring review.",
+      "sampleSize": null,
+      "studies": 53,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Group coaching",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "95% CI reported",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "Effect source spans heterogeneous follow-up; 36-month risk and lag are assumptions requiring review.",
+        "recency": "Search cutoff 2015-02; retrieval 2026-10-26",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-team-bp",
+      "studyId": "review-team-bp",
+      "sourceId": "cpstf-team-bp",
+      "measure": "risk_difference",
+      "estimate": 0.085,
+      "low": null,
+      "high": null,
+      "intervalType": "median",
+      "outcome": "Additional people with controlled BP",
+      "outcomeId": "bp-controlled",
+      "unit": "people",
+      "direction": "increase",
+      "population": "Adults with hypertension",
+      "setting": "Primary care",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 12,
+      "followUpNote": "Baseline control and severity are not measured by PLACES hypertension prevalence.",
+      "sampleSize": null,
+      "studies": 54,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Nurse / pharmacist team",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "No pooled precision extracted",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "Baseline control and severity are not measured by PLACES hypertension prevalence.",
+        "recency": "Search cutoff 2020-06; retrieval 2026-10-26",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-supported-smbp",
+      "studyId": "review-supported-smbp",
+      "sourceId": "cpstf-supported-smbp",
+      "measure": "risk_difference",
+      "estimate": 0.053,
+      "low": null,
+      "high": null,
+      "intervalType": "median",
+      "outcome": "Additional people with controlled BP",
+      "outcomeId": "bp-controlled",
+      "unit": "people",
+      "direction": "increase",
+      "population": "Adults with hypertension able to share home readings",
+      "setting": "Home + primary care",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 9,
+      "followUpNote": "Median 9-month control outcome; monitor, training and follow-up must be delivered together.",
+      "sampleSize": null,
+      "studies": 25,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Monitor + clinical follow-up",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "No pooled precision extracted",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "Median 9-month control outcome; monitor, training and follow-up must be delivered together.",
+        "recency": "Search cutoff 2013-02; retrieval 2026-10-26",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-chw-cvd",
+      "studyId": "review-chw-cvd",
+      "sourceId": "cpstf-chw-cvd",
+      "measure": "risk_difference",
+      "estimate": 0.176,
+      "low": null,
+      "high": null,
+      "intervalType": "median",
+      "outcome": "Additional people with controlled BP",
+      "outcomeId": "bp-controlled",
+      "unit": "people",
+      "direction": "increase",
+      "population": "Adults at cardiovascular risk, including underserved communities",
+      "setting": "Community + primary care",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 12,
+      "followUpNote": "Use the team-based CHW version; education alone does not inherit this effect.",
+      "sampleSize": null,
+      "studies": 31,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "CHW integrated with clinical team",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "No pooled precision extracted",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "Use the team-based CHW version; education alone does not inherit this effect.",
+        "recency": "Search cutoff 2013-07; retrieval 2026-10-26",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-digital-bp",
+      "studyId": "review-digital-bp",
+      "sourceId": "cpstf-digital-bp",
+      "measure": "mean_difference",
+      "estimate": 3.7,
+      "low": null,
+      "high": null,
+      "intervalType": "not reported",
+      "outcome": "Mean systolic BP reduction",
+      "outcomeId": "sbp-reduced",
+      "unit": "mmHg per person",
+      "direction": "increase",
+      "population": "Adults with hypertension and digital access",
+      "setting": "Primary care + remote",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 6,
+      "followUpNote": "Review interventions had a median six-month duration. Continuous BP reduction must not be converted into controlled cases or admissions.",
+      "sampleSize": null,
+      "studies": 7,
+      "design": "Systematic review of seven randomized controlled trials",
+      "intensity": "Interactive digital support",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "No pooled precision extracted",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "Mean BP reduction is continuous; do not convert it directly to controlled cases or admissions.",
+        "recency": "Effectiveness search cutoff 2014; source checked 2026-10-26.",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-pharmacy-adherence",
+      "studyId": "review-pharmacy-adherence",
+      "sourceId": "cpstf-pharmacy-adherence",
+      "measure": "risk_difference",
+      "estimate": 0.069,
+      "low": null,
+      "high": null,
+      "intervalType": "median",
+      "outcome": "Additional medication-adherent people",
+      "outcomeId": "medication-adherent",
+      "unit": "people",
+      "direction": "increase",
+      "population": "People prescribed cardiovascular preventive medication",
+      "setting": "Pharmacy + primary care",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 12,
+      "followUpNote": "Adherence threshold is at least 80%; hypertension prevalence is context, not medication eligibility.",
+      "sampleSize": null,
+      "studies": 48,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Pharmacist assessment + tailoring",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "No pooled precision extracted",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "Adherence threshold is at least 80%; hypertension prevalence is context, not medication eligibility.",
+        "recency": "Effectiveness search cutoff 2018-08; source checked 2026-10-26.",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-medication-cost-support",
+      "studyId": "review-medication-cost-support",
+      "sourceId": "cpstf-medication-cost-support",
+      "measure": "risk_difference",
+      "estimate": 0.06,
+      "low": null,
+      "high": null,
+      "intervalType": "median",
+      "outcome": "Additional people with controlled BP",
+      "outcomeId": "bp-controlled",
+      "unit": "people",
+      "direction": "increase",
+      "population": "People with hypertension or hyperlipidemia facing medication costs",
+      "setting": "Payer + pharmacy",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 12,
+      "followUpNote": "BP-goal estimate is a median from three studies; economic evidence is inconsistent.",
+      "sampleSize": null,
+      "studies": 18,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Copayment assistance + counseling",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "No pooled precision extracted",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "BP-goal estimate is a median from three studies; economic evidence is inconsistent.",
+        "recency": "Effectiveness search cutoff 2015-07; source checked 2026-10-26.",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-collaborative-depression",
+      "studyId": "review-collaborative-depression",
+      "sourceId": "archer-2012",
+      "measure": "risk_ratio",
+      "estimate": 1.32,
+      "low": 1.22,
+      "high": 1.43,
+      "intervalType": "95% CI",
+      "outcome": "Additional depression responses",
+      "outcomeId": "depression-response",
+      "unit": "people",
+      "direction": "increase",
+      "population": "Adults with active depression in primary care",
+      "setting": "Primary care",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 6,
+      "followUpNote": "Short-term response RR from Archer 2012; diagnosed-ever depression is not active major depression.",
+      "sampleSize": 24308,
+      "studies": 79,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Care manager + psychiatric consultation",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "95% CI reported",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "Short-term response RR from Archer 2012; diagnosed-ever depression is not active major depression.",
+        "recency": "Search cutoff 2012-02; retrieval 2026-10-26",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-home-depression",
+      "studyId": "review-home-depression",
+      "sourceId": "cpstf-home-depression",
+      "measure": "risk_difference",
+      "estimate": null,
+      "low": null,
+      "high": null,
+      "intervalType": "not reported",
+      "outcome": "Additional depression responses",
+      "outcomeId": "depression-response",
+      "unit": "people",
+      "direction": "increase",
+      "population": "Older adults with depression, including home-care clients",
+      "setting": "Home",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 6,
+      "followUpNote": "Summary response rates lack a clear incremental comparator; no transportable effect is prefilled.",
+      "sampleSize": null,
+      "studies": 8,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Case management + clinician support",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "No pooled precision extracted",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "Summary response rates lack a clear incremental comparator; no transportable effect is prefilled.",
+        "recency": "Search cutoff 2005-10; retrieval 2026-10-26",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-targeted-school-cbt",
+      "studyId": "review-werner-seidler-2017",
+      "sourceId": "cpstf-targeted-school-cbt",
+      "measure": "standardized_mean_difference",
+      "estimate": null,
+      "low": null,
+      "high": null,
+      "intervalType": "not reported",
+      "outcome": "Depression symptom improvement",
+      "outcomeId": "depression-symptom",
+      "unit": "native scale per student",
+      "direction": "increase",
+      "population": "Students aged 7\u201318 with elevated depression or anxiety symptoms",
+      "setting": "School",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 6,
+      "followUpNote": "Qualitative benefit supported; numeric effect and target scale SD need extraction and review.",
+      "sampleSize": null,
+      "studies": 29,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Targeted CBT program",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "No pooled precision extracted",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "Qualitative benefit supported; numeric effect and target scale SD need extraction and review.",
+        "recency": "Effectiveness search cutoff 2015; source checked 2026-10-26.",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-universal-school-cbt",
+      "studyId": "review-werner-seidler-2017",
+      "sourceId": "cpstf-universal-school-cbt",
+      "measure": "standardized_mean_difference",
+      "estimate": null,
+      "low": null,
+      "high": null,
+      "intervalType": "not reported",
+      "outcome": "Depression symptom improvement",
+      "outcomeId": "depression-symptom",
+      "unit": "native scale per student",
+      "direction": "increase",
+      "population": "School students aged 7\u201318",
+      "setting": "School",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 6,
+      "followUpNote": "No unverified SMD-to-case conversion; local school enrollment is needed for eligibility.",
+      "sampleSize": null,
+      "studies": 38,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Universal classroom CBT",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "No pooled precision extracted",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "No unverified SMD-to-case conversion; local school enrollment is needed for eligibility.",
+        "recency": "Effectiveness search cutoff 2015; source checked 2026-10-26.",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-asthma-home",
+      "studyId": "review-asthma-home",
+      "sourceId": "cpstf-asthma-home",
+      "measure": "mean_difference",
+      "estimate": 21,
+      "low": null,
+      "high": null,
+      "intervalType": "not reported",
+      "outcome": "Additional symptom-free days",
+      "outcomeId": "asthma-symptom-days",
+      "unit": "days per child",
+      "direction": "increase",
+      "population": "Children and adolescents with asthma and home trigger exposure",
+      "setting": "Home",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 12,
+      "followUpNote": "Pediatric eligibility is user-assumed; adult asthma prevalence must not substitute.",
+      "sampleSize": null,
+      "studies": 22,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Home assessment + remediation + education",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "No pooled precision extracted",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "Pediatric eligibility is user-assumed; adult asthma prevalence must not substitute.",
+        "recency": "Search cutoff 2008-02; retrieval 2026-10-26",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-vaccine-reminders",
+      "studyId": "review-vaccine-reminders",
+      "sourceId": "cpstf-vaccine-reminders",
+      "measure": "risk_difference",
+      "estimate": 0.06,
+      "low": null,
+      "high": null,
+      "intervalType": "median",
+      "outcome": "Additional people vaccinated",
+      "outcomeId": "vaccinated",
+      "unit": "people",
+      "direction": "increase",
+      "population": "People due or overdue for a specified vaccination",
+      "setting": "Clinic + community",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 12,
+      "followUpNote": "Six percentage points is the reminder-only median; choose an actual vaccine and denominator.",
+      "sampleSize": null,
+      "studies": 29,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Personalized reminder / recall",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "No pooled precision extracted",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "Six percentage points is the reminder-only median; choose an actual vaccine and denominator.",
+        "recency": "Search cutoff 2012; retrieval 2026-10-26",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-vaccine-standing-orders",
+      "studyId": "review-vaccine-standing-orders",
+      "sourceId": "cpstf-vaccine-standing-orders",
+      "measure": "risk_difference",
+      "estimate": 0.16,
+      "low": null,
+      "high": null,
+      "intervalType": "median",
+      "outcome": "Additional people vaccinated",
+      "outcomeId": "vaccinated",
+      "unit": "people",
+      "direction": "increase",
+      "population": "People eligible for a specified vaccination in clinical settings",
+      "setting": "Clinic / pharmacy",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 12,
+      "followUpNote": "Standing-orders-alone median; requires locally approved clinical protocols.",
+      "sampleSize": null,
+      "studies": 35,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Approved protocol + trained provider",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "No pooled precision extracted",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "Standing-orders-alone median; requires locally approved clinical protocols.",
+        "recency": "Search cutoff 2012-02; retrieval 2026-10-26",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-vaccine-home",
+      "studyId": "review-vaccine-home",
+      "sourceId": "cpstf-vaccine-home",
+      "measure": "risk_difference",
+      "estimate": 0.11,
+      "low": null,
+      "high": null,
+      "intervalType": "median",
+      "outcome": "Additional people vaccinated",
+      "outcomeId": "vaccinated",
+      "unit": "people",
+      "direction": "increase",
+      "population": "People due for vaccination who need home outreach",
+      "setting": "Home",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 12,
+      "followUpNote": "Home delivery and referral require different capacities; choose the local version.",
+      "sampleSize": null,
+      "studies": 23,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Home assessment + vaccination / referral",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "No pooled precision extracted",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "Home delivery and referral require different capacities; choose the local version.",
+        "recency": "Search cutoff 2012; retrieval 2026-10-26",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-quitline",
+      "studyId": "review-quitline",
+      "sourceId": "cpstf-quitline",
+      "measure": "risk_difference",
+      "estimate": 0.031,
+      "low": null,
+      "high": null,
+      "intervalType": "median",
+      "outcome": "Additional people who quit tobacco",
+      "outcomeId": "tobacco-quit",
+      "unit": "people",
+      "direction": "increase",
+      "population": "Adults who smoke and want to quit",
+      "setting": "Community + remote",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 6,
+      "followUpNote": "General-public proactive quitline median; not a benefit for simply sharing a phone number.",
+      "sampleSize": null,
+      "studies": 77,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Proactive telephone counseling",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "No pooled precision extracted",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "General-public proactive quitline median; not a benefit for simply sharing a phone number.",
+        "recency": "Effectiveness search cutoff 2013-06; source checked 2026-10-26.",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    },
+    {
+      "id": "effect-cessation-text",
+      "studyId": "review-cessation-text",
+      "sourceId": "cpstf-cessation-text",
+      "measure": "risk_difference",
+      "estimate": 0.023,
+      "low": null,
+      "high": null,
+      "intervalType": "median",
+      "outcome": "Additional people who quit tobacco",
+      "outcomeId": "tobacco-quit",
+      "unit": "people",
+      "direction": "increase",
+      "population": "Adults who smoke and want to quit with mobile access",
+      "setting": "Community + remote",
+      "geography": "United States and other high-income settings; see source for included countries",
+      "comparator": "Usual care / no added program as defined in included studies",
+      "followUpMonths": 6,
+      "followUpNote": "Text messaging alone median; do not assign combined-treatment effects to messages alone.",
+      "sampleSize": null,
+      "studies": 17,
+      "design": "Systematic review; heterogeneous designs; see source",
+      "intensity": "Structured text-message support",
+      "baselineRisk": null,
+      "reviewState": "curated",
+      "quality": {
+        "design": "Systematic review; underlying designs vary",
+        "precision": "No pooled precision extracted",
+        "consistency": "Source-specific; not scored numerically",
+        "directness": "Text messaging alone median; do not assign combined-treatment effects to messages alone.",
+        "recency": "Effectiveness search cutoff 2018-10; source checked 2026-10-26.",
+        "implementation": "Delivery components must match the reviewed intervention"
+      }
+    }
+  ],
+  "economics": [
+    {
+      "id": "economic-crc-navigation",
+      "sourceId": "cpstf-crc-navigation",
+      "studyId": "economic-review-cancer-navigation-2022",
+      "kind": "review",
+      "measure": "Intervention cost",
+      "value": 150,
+      "low": 66,
+      "high": 338,
+      "currency": "USD",
+      "priceYear": 2022,
+      "unit": "per participant",
+      "geography": "Review settings; not a Michigan quote",
+      "studies": 16,
+      "perspective": "Review-specific; inspect source before transfer",
+      "note": "Original price year retained. Median / review context where reported; not a local current estimate. IQI is a between-study interquartile interval, not a CI."
+    },
+    {
+      "id": "economic-breast-navigation",
+      "sourceId": "cpstf-breast-navigation",
+      "studyId": "economic-review-cancer-navigation-2022",
+      "kind": "review",
+      "measure": "Intervention cost",
+      "value": 109,
+      "low": null,
+      "high": null,
+      "currency": "USD",
+      "priceYear": 2022,
+      "unit": "per participant",
+      "geography": "Review settings; not a Michigan quote",
+      "studies": 3,
+      "perspective": "Review-specific; inspect source before transfer",
+      "note": "Original price year retained. Selected reported study cost, not a review median."
+    },
+    {
+      "id": "economic-diabetes-prevention",
+      "sourceId": "cpstf-diabetes-prevention",
+      "studyId": "economic-review-diabetes-prevention",
+      "kind": "review",
+      "measure": "Intervention cost",
+      "value": 417,
+      "low": null,
+      "high": null,
+      "currency": "USD",
+      "priceYear": 2013,
+      "unit": "per participant",
+      "geography": "Review settings; not a Michigan quote",
+      "studies": 8,
+      "perspective": "Review-specific; inspect source before transfer",
+      "note": "Original price year retained. Median / review context where reported; not a local current estimate."
+    },
+    {
+      "id": "economic-team-bp",
+      "sourceId": "cpstf-team-bp",
+      "studyId": "economic-review-team-bp",
+      "kind": "review",
+      "measure": "Intervention cost",
+      "value": 299,
+      "low": null,
+      "high": null,
+      "currency": "USD",
+      "priceYear": 2020,
+      "unit": "per participant per year",
+      "geography": "Review settings; not a Michigan quote",
+      "studies": 29,
+      "perspective": "Review-specific; inspect source before transfer",
+      "note": "Original price year retained. Median / review context where reported; not a local current estimate."
+    },
+    {
+      "id": "economic-supported-smbp",
+      "sourceId": "cpstf-supported-smbp",
+      "studyId": "economic-review-supported-smbp",
+      "kind": "review",
+      "measure": "Intervention cost",
+      "value": 174,
+      "low": null,
+      "high": null,
+      "currency": "USD",
+      "priceYear": 2014,
+      "unit": "per participant",
+      "geography": "Review settings; not a Michigan quote",
+      "studies": 7,
+      "perspective": "Review-specific; inspect source before transfer",
+      "note": "Original price year retained. Median / review context where reported; not a local current estimate."
+    },
+    {
+      "id": "economic-chw-cvd",
+      "sourceId": "cpstf-chw-cvd",
+      "studyId": "economic-review-chw-cvd",
+      "kind": "review",
+      "measure": "Intervention cost",
+      "value": 329,
+      "low": null,
+      "high": null,
+      "currency": "USD",
+      "priceYear": 2015,
+      "unit": "per participant per year",
+      "geography": "Review settings; not a Michigan quote",
+      "studies": 8,
+      "perspective": "Review-specific; inspect source before transfer",
+      "note": "Original price year retained. Median / review context where reported; not a local current estimate."
+    },
+    {
+      "id": "economic-pharmacy-adherence",
+      "sourceId": "cpstf-pharmacy-adherence",
+      "studyId": "economic-review-pharmacy-adherence",
+      "kind": "review",
+      "measure": "Intervention cost",
+      "value": 246,
+      "low": null,
+      "high": null,
+      "currency": "USD",
+      "priceYear": 2018,
+      "unit": "per participant per year",
+      "geography": "Review settings; not a Michigan quote",
+      "studies": 19,
+      "perspective": "Review-specific; inspect source before transfer",
+      "note": "Original price year retained. Median / review context where reported; not a local current estimate."
+    },
+    {
+      "id": "economic-medication-cost-support",
+      "sourceId": "cpstf-medication-cost-support",
+      "studyId": "economic-review-medication-cost-support",
+      "kind": "review",
+      "measure": "Intervention cost",
+      "value": 172,
+      "low": null,
+      "high": null,
+      "currency": "USD",
+      "priceYear": 2014,
+      "unit": "per participant per year",
+      "geography": "Review settings; not a Michigan quote",
+      "studies": 9,
+      "perspective": "Review-specific; inspect source before transfer",
+      "note": "Original price year retained. Median / review context where reported; not a local current estimate."
+    },
+    {
+      "id": "economic-collaborative-depression",
+      "sourceId": "cpstf-collaborative-depression",
+      "studyId": "economic-review-collaborative-depression",
+      "kind": "review",
+      "measure": "Intervention cost",
+      "value": 204,
+      "low": null,
+      "high": null,
+      "currency": "USD",
+      "priceYear": 2008,
+      "unit": "per participant per year",
+      "geography": "Review settings; not a Michigan quote",
+      "studies": 9,
+      "perspective": "Review-specific; inspect source before transfer",
+      "note": "Original price year retained. Median / review context where reported; not a local current estimate."
+    },
+    {
+      "id": "economic-asthma-home",
+      "sourceId": "cpstf-asthma-home",
+      "studyId": "economic-review-asthma-home",
+      "kind": "review",
+      "measure": "Intervention cost",
+      "value": null,
+      "low": null,
+      "high": null,
+      "currency": "USD",
+      "priceYear": 2007,
+      "unit": "per participant",
+      "geography": "Review settings; not a Michigan quote",
+      "studies": 13,
+      "perspective": "Review-specific; inspect source before transfer",
+      "note": "Original price year retained. Median / review context where reported; not a local current estimate. No single transferable cost selected."
+    },
+    {
+      "id": "economic-vaccine-reminders",
+      "sourceId": "cpstf-vaccine-reminders",
+      "studyId": "economic-review-vaccine-reminders",
+      "kind": "review",
+      "measure": "Intervention cost",
+      "value": 2.13,
+      "low": null,
+      "high": null,
+      "currency": "USD",
+      "priceYear": 2013,
+      "unit": "per participant per year",
+      "geography": "Review settings; not a Michigan quote",
+      "studies": 23,
+      "perspective": "Review-specific; inspect source before transfer",
+      "note": "Original price year retained. Median / review context where reported; not a local current estimate."
+    },
+    {
+      "id": "economic-vaccine-standing-orders",
+      "sourceId": "cpstf-vaccine-standing-orders",
+      "studyId": "economic-review-vaccine-standing-orders",
+      "kind": "review",
+      "measure": "Intervention cost",
+      "value": 5.55,
+      "low": null,
+      "high": null,
+      "currency": "USD",
+      "priceYear": 2013,
+      "unit": "per participant per year",
+      "geography": "Review settings; not a Michigan quote",
+      "studies": 3,
+      "perspective": "Review-specific; inspect source before transfer",
+      "note": "Original price year retained. Median / review context where reported; not a local current estimate."
+    },
+    {
+      "id": "economic-vaccine-home",
+      "sourceId": "cpstf-vaccine-home",
+      "studyId": "economic-review-vaccine-home",
+      "kind": "review",
+      "measure": "Intervention cost",
+      "value": 56.3,
+      "low": null,
+      "high": null,
+      "currency": "USD",
+      "priceYear": 2013,
+      "unit": "per participant",
+      "geography": "Review settings; not a Michigan quote",
+      "studies": 9,
+      "perspective": "Review-specific; inspect source before transfer",
+      "note": "Original price year retained. Median / review context where reported; not a local current estimate."
+    },
+    {
+      "id": "economic-quitline",
+      "sourceId": "cpstf-quitline",
+      "studyId": "economic-review-quitline",
+      "kind": "review",
+      "measure": "Intervention cost",
+      "value": null,
+      "low": null,
+      "high": null,
+      "currency": "USD",
+      "priceYear": 2013,
+      "unit": "per participant",
+      "geography": "Review settings; not a Michigan quote",
+      "studies": 27,
+      "perspective": "Review-specific; inspect source before transfer",
+      "note": "Original price year retained. Median / review context where reported; not a local current estimate. No single transferable cost selected."
+    }
+  ]
+}

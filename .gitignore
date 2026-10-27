@@ -28,3 +28,9 @@ pnpm-debug.log*
 
 # vercel
 .vercel
+
+# TypeScript incremental cache
+*.tsbuildinfo
+
+# Local intervention workspace database and journal
+/.fieldwork/

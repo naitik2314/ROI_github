@@ -57,7 +57,7 @@ export default function SocialMediaFeed({ posts }: { posts: SocialPost[] }) {
                                 <TopicIcon topic={posts[index].topic} />
                             </div>
                             <p className="text-xs text-gray-300 leading-snug line-clamp-2">
-                                "{posts[index].content}"
+                                &ldquo;{posts[index].content}&rdquo;
                             </p>
                             <div className="flex gap-3 mt-2 text-[10px] text-white/30">
                                 <span className="flex items-center gap-1"><ThumbsUp size={10} /> 12</span>

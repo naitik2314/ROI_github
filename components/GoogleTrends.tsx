@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TrendingUp, TrendingDown, Search } from "lucide-react";
+import { TrendingUp, Search } from "lucide-react";
 
 interface TrendData {
     term: string;

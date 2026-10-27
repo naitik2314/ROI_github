@@ -1,6 +1,6 @@
 import { motion, AnimatePresence, Variants } from 'framer-motion';
-import { useState } from 'react';
-import { Maximize2, Minimize2, X } from 'lucide-react';
+import { useState, type ComponentProps } from 'react';
+import { Maximize2, Minimize2 } from 'lucide-react';
 import CommuterTable from './CommuterTable';
 import SocialMediaFeed from './SocialMediaFeed';
 import GoogleTrends from './GoogleTrends';
@@ -14,7 +14,7 @@ const COLORS = {
 
 interface HealthTrendsProps {
     isVisible: boolean;
-    data?: any;
+    data?: { commuters?: ComponentProps<typeof CommuterTable>['data']; socialPosts?: ComponentProps<typeof SocialMediaFeed>['posts']; trendingTopics?: ComponentProps<typeof GoogleTrends>['data']; roiAnalysis?: ComponentProps<typeof RoiPanel>['data'] };
 }
 
 export default function HealthTrends({ isVisible, data }: HealthTrendsProps) {

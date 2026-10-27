@@ -7,14 +7,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "test": "node --test tests/*.test.mjs",
+    "data:generate": "node scripts/generate-sentiment.mjs",
+    "typecheck": "tsc --noEmit",
+    "test:ui": "node scripts/check-ui.mjs",
+    "interventions:refresh-research": "node scripts/interventions/refresh-research.mjs",
+    "interventions:refresh-local": "node scripts/interventions/refresh-local.mjs",
+    "interventions:rebuild-models": "node scripts/interventions/rebuild-models.mjs",
+    "test:interventions": "node --test tests/intervention-*.test.mjs",
+    "test:interventions:ui": "node scripts/check-interventions-ui.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@google/generative-ai": "^0.24.1",
     "@svg-maps/usa": "^2.0.0",
     "clsx": "^2.1.1",
     "d3-geo": "^3.1.1",
@@ -40,6 +48,7 @@
     "eslint-config-next": "15.1.4",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.16",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "@eslint/eslintrc": "3.3.3"
   }
 }
